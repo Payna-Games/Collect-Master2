@@ -13,9 +13,12 @@ public class HoleSize : MonoBehaviour
     private CameraSwitcher cameraSwitcher;
     private int cameraindex = 1;
     
+    //circle fill değerleri
     private float scaleValue;
     private float scaleValue2;
     private float circleRatio;
+    public float fillSpeed = 0.5f;
+    private float smoothfillAmount;
 
     private void Start()
     {
@@ -33,9 +36,9 @@ public class HoleSize : MonoBehaviour
     {
         scaleValue = objectSize;
         scaleValue2 +=objectSize;
-        circleRatio = scaleValue / scaleIncraseThreshold;
-        circle.fillAmount += circleRatio;
-       
+        circleRatio += scaleValue / scaleIncraseThreshold;
+        
+        
         if (scaleValue2 >= scaleIncraseThreshold)
         {
             IncreaseScale();
@@ -43,10 +46,16 @@ public class HoleSize : MonoBehaviour
             cameraindex++;
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
             circle.fillAmount = 0;
-            
+            circleRatio = 0;
+
 
 
         }
         
+    }
+
+    private void Update()
+    {
+        circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
     }
 }
