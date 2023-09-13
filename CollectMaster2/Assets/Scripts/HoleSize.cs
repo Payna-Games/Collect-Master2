@@ -9,7 +9,10 @@ public class HoleSize : MonoBehaviour
 {
     [SerializeField] private float scaleIncraseThreshold;
     [SerializeField] private float scaleStep;
+    [SerializeField] private float scaleSpeed;
+    private bool increase = false;
     [SerializeField] private Image circle;
+    //private Animator animator;
     private CameraSwitcher cameraSwitcher;
     private int cameraindex = 1;
     
@@ -24,13 +27,16 @@ public class HoleSize : MonoBehaviour
     {
 
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
+        //animator = GetComponent<Animator>();
     }
 
     private void IncreaseScale()
     {
-        transform.localScale += scaleStep * Vector3.one;
-        
+        increase = true;
+
     }
+
+    
     
     public void CollectibleCollected(float objectSize)
     {
@@ -57,5 +63,12 @@ public class HoleSize : MonoBehaviour
     private void Update()
     {
         circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
+
+        if (increase)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale *  scaleStep, Time.deltaTime * scaleSpeed);
+            increase = false;
+        }
+
     }
 }
