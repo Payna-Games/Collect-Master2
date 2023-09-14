@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HoleSize holeSize;
     private CountdownTimer countdownTimer;
     public GameData gameData;
+    public TextMeshProUGUI coinText;
     
     
     void Start()
@@ -45,7 +47,11 @@ public class GameManager : MonoBehaviour
         countdownTimer.isCountingDown = true;
         //timer.StartCountdown();
     }
-   
+
+    public void Coin()
+    {
+        coinText.text = gameData.coin.ToString();
+    }
     
     void Update()
     {

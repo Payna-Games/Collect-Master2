@@ -9,4 +9,5 @@ public class GameData :  ScriptableObject
      public int timeDuration;
      public float holeSize;
      public int income;
+     public int coin;
 }

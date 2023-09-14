@@ -16,6 +16,7 @@ public class SceneManagement : MonoBehaviour
         if (currentSceneIndex == 0)
         {
             gameData.timeDuration = 25;
+            gameData.coin = 0;
         }
     }
     
