@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HoleSize : MonoBehaviour
 {
     [SerializeField] private float scaleIncraseThreshold;
-    [SerializeField] private float scaleStep;
+    [SerializeField] public float scaleStep;
     [SerializeField] private float scaleSpeed;
     private bool increase = false;
     [SerializeField] private Image circle;
@@ -32,7 +32,8 @@ public class HoleSize : MonoBehaviour
 
     private void IncreaseScale()
     {
-        increase = true;
+        //increase = true;
+        transform.localScale += scaleStep * Vector3.one;
 
     }
 
@@ -64,11 +65,11 @@ public class HoleSize : MonoBehaviour
     {
         circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
 
-        if (increase)
-        {
-            transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale *  scaleStep, Time.deltaTime * scaleSpeed);
-            increase = false;
-        }
+       // if (increase)
+        //{
+          //  transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale *  scaleStep, Time.deltaTime * scaleSpeed);
+           // increase = false;
+       // }
 
     }
 }
