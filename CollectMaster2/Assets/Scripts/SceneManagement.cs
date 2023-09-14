@@ -17,6 +17,7 @@ public class SceneManagement : MonoBehaviour
         {
             gameData.timeDuration = 25;
             gameData.coin = 0;
+            gameData.collectedObjects.Clear();
         }
     }
     

@@ -8,7 +8,6 @@ public class DestroyTrigger : MonoBehaviour
     [Header(" Elements ")] 
     [SerializeField] private HoleSize holeSize;
     [SerializeField] private GameManager gameManager;
-    
     public GameData gameData;
     
     private void OnTriggerEnter(Collider other)
@@ -19,6 +18,7 @@ public class DestroyTrigger : MonoBehaviour
             gameData.coin += collectible.GetCoin();
             gameManager.Coin();
                 Destroy(other.gameObject);
+                gameData.collectedObjects.Add(collectible.name);
                 
         }
     }

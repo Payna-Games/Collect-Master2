@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewGameData", menuName = "Custom/GameData")]
 public class GameData :  ScriptableObject
@@ -10,4 +11,5 @@ public class GameData :  ScriptableObject
      public float holeSize;
      public int income;
      public int coin;
+     public List<string> collectedObjects = new List<string>();
 }
