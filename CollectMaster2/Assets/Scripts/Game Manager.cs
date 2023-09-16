@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private GameObject buttons;
     private GameObject hole;
     [SerializeField] private HoleSize holeSize;
-    public Animator animator;
+    
     private CountdownTimer countdownTimer;
     public GameData gameData;
     public TextMeshProUGUI coinText;
@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour
         {
             gameOver = false;
             countdownTimer.isCountingDown = true;
-            //timer.StartCountdown();
+            countdownTimer.StartCountdown();
+            
+            Debug.Log("tıklandı");
         }
     }
 
@@ -61,9 +63,9 @@ public class GameManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            animator.SetBool("Down",true);
-            //animator.gameObject.SetActive(true);
-            buttons.SetActive(false);
+           
+            
+           
         }
     }
 }

@@ -12,7 +12,7 @@ public class CountdownTimer : MonoBehaviour
     private int currentTime;
     private GameManager gameManager;
     public GameData gameData;
-    public bool isCountingDown = false;
+    public bool isCountingDown;
     
 
     private void Start()
@@ -62,10 +62,6 @@ public class CountdownTimer : MonoBehaviour
 
     private void Update()
     {
-        if (isCountingDown)
-        {
-            StartCountdown();
-            isCountingDown = false;
-        }
+       
     }
 }
