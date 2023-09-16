@@ -9,6 +9,8 @@ public class Collectible : MonoBehaviour
     [Header(" Settings ")] 
     [SerializeField] private float size;
 
+    
+
     public string name;
 
     public int coin;
