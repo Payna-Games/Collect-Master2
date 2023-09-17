@@ -83,8 +83,13 @@ public class HoleSize : MonoBehaviour
        }
        if (transform.localScale.x >= targetSize[ currentSizeIndex].x && transform.localScale.y >= targetSize[ currentSizeIndex].y && transform.localScale.z >= targetSize[ currentSizeIndex].z)
        {
+           
+           if (currentSizeIndex < 3)
+           {
+               currentSizeIndex++;
+               
+           }
            hasIncreased = true;
-           currentSizeIndex++;
        }
 
        
