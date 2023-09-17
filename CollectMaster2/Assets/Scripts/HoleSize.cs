@@ -10,9 +10,12 @@ public class HoleSize : MonoBehaviour
     [SerializeField] private float scaleIncraseThreshold;
     [SerializeField] public float scaleStep;
     [SerializeField] private float scaleSpeed;
-    private bool increase = false;
     [SerializeField] private Image circle;
-    //private Animator animator;
+
+    [SerializeField] private Vector3[] targetSize;
+    [SerializeField] private int currentSizeIndex = 0;
+    
+    
     private CameraSwitcher cameraSwitcher;
     private int cameraindex = 1;
     
@@ -21,21 +24,25 @@ public class HoleSize : MonoBehaviour
     private float scaleValue2;
     private float circleRatio;
     public float fillSpeed = 0.5f;
+    public float holeSizeSpeed = 1;
     private float smoothfillAmount;
+
+    private bool increase = false;
+    private bool hasIncreased = false;
 
     private void Start()
     {
 
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
-        //animator = GetComponent<Animator>();
+        
     }
 
-    private void IncreaseScale()
-    {
-        //increase = true;
-        transform.localScale += scaleStep * Vector3.one;
+   // private void IncreaseScale()
+   // {
+    //    
+        
 
-    }
+    //}
 
     
     
@@ -48,7 +55,9 @@ public class HoleSize : MonoBehaviour
         
         if (scaleValue2 >= scaleIncraseThreshold)
         {
-            IncreaseScale();
+            increase = true;
+            hasIncreased = false;
+            // IncreaseScale();
             cameraSwitcher.SwitchCamera(cameraindex);
             cameraindex++;
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
@@ -65,11 +74,19 @@ public class HoleSize : MonoBehaviour
     {
         circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
 
-       // if (increase)
-        //{
-          //  transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale *  scaleStep, Time.deltaTime * scaleSpeed);
-           // increase = false;
-       // }
+       if (increase && !hasIncreased)
+       {
+           transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
+           
 
+
+       }
+       if (transform.localScale.x >= targetSize[ currentSizeIndex].x && transform.localScale.y >= targetSize[ currentSizeIndex].y && transform.localScale.z >= targetSize[ currentSizeIndex].z)
+       {
+           hasIncreased = true;
+           currentSizeIndex++;
+       }
+
+       
     }
 }

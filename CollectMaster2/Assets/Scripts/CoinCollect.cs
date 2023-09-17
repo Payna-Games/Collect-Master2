@@ -30,7 +30,7 @@ public class CoinCollect : MonoBehaviour
 
     public void Setup(int coinAmount)
     {
-        textMesh.SetText(coinAmount.ToString());
+        textMesh.SetText("+" + coinAmount.ToString());
         textColor = textMesh.color;
         disappearTime = 0.4f;
     }
