@@ -7,7 +7,7 @@ public class Collectible : MonoBehaviour
 {
 
     [Header(" Settings ")] 
-    [SerializeField] private int size;
+    [SerializeField] private float size;
 
     
 
@@ -20,7 +20,7 @@ public class Collectible : MonoBehaviour
         GetComponent<Rigidbody>().sleepThreshold = 0;
     }
 
-    public int GetSize()
+    public float GetSize()
     {
         return size;
     }

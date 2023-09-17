@@ -24,7 +24,7 @@ public class DestroyTrigger : MonoBehaviour
             gameManager.Coin();
                 Destroy(other.gameObject);
                 gameData.collectedObjects.Add(collectible.name);
-                //coinCollectAnimator.SetTrigger("Coin");
+               
                 CoinCollect.Create(holeTransform.position, collectible.GetCoin());
 
         }
