@@ -9,6 +9,8 @@ public class DestroyTrigger : MonoBehaviour
     [SerializeField] private HoleSize holeSize;
     [SerializeField] private Transform holeTransform;
     [SerializeField] private GameManager gameManager;
+
+    public int increaseCoin = 0;
     //[SerializeField] private Animator coinCollectAnimator;
     public GameData gameData;
 
@@ -25,7 +27,7 @@ public class DestroyTrigger : MonoBehaviour
                 Destroy(other.gameObject);
                 gameData.collectedObjects.Add(collectible.name);
                
-                CoinCollect.Create(holeTransform.position, collectible.GetCoin());
+                CoinCollect.Create(holeTransform.position, collectible.GetCoin()+increaseCoin);
 
         }
     }

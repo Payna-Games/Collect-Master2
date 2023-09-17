@@ -12,4 +12,7 @@ public class GameData :  ScriptableObject
      public int income;
      public int coin;
      public List<string> collectedObjects = new List<string>();
+     public int holeSizeLevel;
+     public int timeLevel;
+     public int IncomeLevel;
 }

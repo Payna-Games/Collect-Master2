@@ -17,6 +17,9 @@ public class SceneManagement : MonoBehaviour
         {
             gameData.timeDuration = 25;
             gameData.coin = 0;
+            gameData.holeSizeLevel = 0;
+            gameData.timeLevel = 0;
+            gameData.IncomeLevel = 0;
             gameData.collectedObjects.Clear();
         }
     }
