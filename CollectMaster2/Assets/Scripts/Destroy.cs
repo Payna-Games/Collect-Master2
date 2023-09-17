@@ -7,10 +7,14 @@ public class DestroyTrigger : MonoBehaviour
 {
     [Header(" Elements ")] 
     [SerializeField] private HoleSize holeSize;
+    [SerializeField] private Transform holeTransform;
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private Animator coinCollectAnimator;
+    //[SerializeField] private Animator coinCollectAnimator;
     public GameData gameData;
+
+
     
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Collectible collectible))
@@ -20,8 +24,9 @@ public class DestroyTrigger : MonoBehaviour
             gameManager.Coin();
                 Destroy(other.gameObject);
                 gameData.collectedObjects.Add(collectible.name);
-                coinCollectAnimator.SetTrigger("Coin");
-                
+                //coinCollectAnimator.SetTrigger("Coin");
+                CoinCollect.Create(holeTransform.position, collectible.GetCoin());
+
         }
     }
 }
