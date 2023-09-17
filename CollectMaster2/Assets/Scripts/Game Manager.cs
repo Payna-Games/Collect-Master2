@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void Coin()
     {
-        coinText.text = gameData.coin.ToString() + destroyTrigger.increaseCoin;
+        gameData.coin += destroyTrigger.increaseCoin;
+        coinText.text = gameData.coin.ToString();
     }
     
     public void Update()
