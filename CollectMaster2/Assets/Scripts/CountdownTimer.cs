@@ -8,6 +8,9 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
+    [SerializeField] private Image timeImage;
+
+    private Animator timeImageAnimator;
     //public int countdownDuration = 10; // Başlangıç süresi (saniye)
     private int currentTime;
     private GameManager gameManager;
@@ -21,9 +24,9 @@ public class CountdownTimer : MonoBehaviour
         //currentTime = gameData.countdownTimer;
         countdownText.text = "00:" + gameData.timeDuration.ToString();
         UpdateUI();
-       
+        timeImageAnimator = GameObject.Find("TimeImage").GetComponent<Animator>();
 
-        
+
     }
 
     public void CountDown()
@@ -43,9 +46,15 @@ public class CountdownTimer : MonoBehaviour
             gameData.timeDuration -= 1; 
             UpdateUI();
 
+            if (gameData.timeDuration == 5)
+            {
+                timeImageAnimator.Play("TimeHurryUp");
+                timeImage.color = new Color(1f, 0, 0, 1);
+                
+            }
             if (gameData.timeDuration == 0)
             {
-                
+                timeImageAnimator.enabled = false;
             }
         }
        
