@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -11,6 +12,8 @@ public class GameManager : MonoBehaviour
     private GameObject hole;
     [SerializeField] private HoleSize holeSize;
     [SerializeField] private DestroyTrigger destroyTrigger;
+    private CameraSwitcher cameraSwitcher;
+    
     
     private CountdownTimer countdownTimer;
     public GameData gameData;
@@ -19,9 +22,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeLevelText;
     [SerializeField] private TextMeshProUGUI holeLevelText;
     [SerializeField] private TextMeshProUGUI IncomeLevelText;
-    
-    
-    
+
+
+    private void Awake()
+    {
+        cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
+       
+
+    }
+
     void Start()
     {
         gameOver = true;
@@ -39,6 +48,9 @@ public class GameManager : MonoBehaviour
         hole.transform.localScale += holeSize.scaleStep * Vector3.one;
         gameData.holeSizeLevel++;
         holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
+        cameraSwitcher.SwitchCamera(holeSize.cameraindex);
+        holeSize.cameraindex++;
+        Debug.Log(holeSize.cameraindex);
 
     }
     public void TimeButton()

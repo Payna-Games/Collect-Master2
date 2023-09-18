@@ -17,7 +17,7 @@ public class HoleSize : MonoBehaviour
     
     
     private CameraSwitcher cameraSwitcher;
-    private int cameraindex = 1;
+    public int cameraindex = 1;
     
     //circle fill değerleri
     private float scaleValue;
@@ -64,7 +64,7 @@ public class HoleSize : MonoBehaviour
             circle.fillAmount = 0;
             circleRatio = 0;
 
-
+            Debug.Log(cameraindex);
 
         }
         
