@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbdc859c51f5674eb0ee36713e99da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleIncraseThreshold: 2
+  scaleIncraseThreshold: 10
   scaleStep: 0.5
   scaleSpeed: 1
   circle: {fileID: 7198111284690103062}
@@ -575,6 +575,7 @@ MonoBehaviour:
   - {x: 2.2, y: 2.2, z: 2.2}
   - {x: 2.5, y: 2.5, z: 2.5}
   currentSizeIndex: 0
+  cameraindex: 1
   fillSpeed: 2.5
   holeSizeSpeed: 1
 --- !u!1 &8139795863420940992

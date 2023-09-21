@@ -8,10 +8,12 @@ public class SceneManagement : MonoBehaviour
     private GameManager gameManager;
     public GameData gameData;
     private int currentSceneIndex;
+    //private CountdownTimer timer;
     
     private void Awake()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //timer = GetComponent<CountdownTimer>();
 
         if (currentSceneIndex == 0)
         {
@@ -30,28 +32,19 @@ public class SceneManagement : MonoBehaviour
         //_gameManager.gameOver = false;
     }
 
-    // Update is called once per frame
+    
     public void NextScene()
     {
-         
-        
-        
+
         int nextSceneIndex = currentSceneIndex + 1; 
 
         
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
-            
-            
-            
-            
 
         }
-        
     }
-
-
 
     public void TryAgainScene()
     {
@@ -62,6 +55,9 @@ public class SceneManagement : MonoBehaviour
     
     void Update()
     {
-        
+        if (gameData.timeDuration == -2)
+        {
+            NextScene();
+        }
     }
 }
