@@ -64,9 +64,11 @@ public class CountdownTimer : MonoBehaviour
 
     private void UpdateUI()
     {
+
+       
+            countdownText.text = "00:" +gameData.timeDuration.ToString();
         
-        // Geri sayım metnini güncelle
-        countdownText.text = "00:" +gameData.timeDuration.ToString();
+        
     }
 
     private void Update()

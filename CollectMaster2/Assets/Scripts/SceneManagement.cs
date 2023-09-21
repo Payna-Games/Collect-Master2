@@ -8,6 +8,9 @@ public class SceneManagement : MonoBehaviour
     private GameManager gameManager;
     public GameData gameData;
     private int currentSceneIndex;
+    private bool isWaiting = false;
+
+    [SerializeField] private DestroyTrigger destroyTrigger;
     //private CountdownTimer timer;
     
     private void Awake()
@@ -55,9 +58,23 @@ public class SceneManagement : MonoBehaviour
     
     void Update()
     {
-        if (gameData.timeDuration == -2)
+        if (gameData.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit )
         {
-            NextScene();
+            StartCoroutine(WaitForSeconds());
         }
+        
+    }
+    private IEnumerator WaitForSeconds()
+    {
+        isWaiting = true;
+
+       
+        yield return new WaitForSeconds(2f);
+        NextScene();
+
+        isWaiting = false;
     }
 }
+    
+    
+
