@@ -20,5 +20,6 @@ public class GameAssets : MonoBehaviour
     }
 
     public Transform collectedCoinPrefab;
+    public GameObject[] collectedObjPrefabs;
 
 }

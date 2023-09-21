@@ -46,3 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectedCoinPrefab: {fileID: 8794226129883494455, guid: 4b6441c2393ff764d92c0d762fe4c737,
     type: 3}
+  collectedObjPrefabs:
+  - {fileID: 3009011710075763700, guid: 7f47e34c25b1eec40805e5127d7c2b99, type: 3}
+  - {fileID: 1277708152297495412, guid: 8f0389dfb15cc18459c0659ed05f3483, type: 3}
+  - {fileID: 8836861827158782352, guid: 71f3db03ea65ec94db46ef46ef66f18b, type: 3}
+  - {fileID: 4295636304828767535, guid: d8a45c6f1e1342649906abdff2a89a81, type: 3}
