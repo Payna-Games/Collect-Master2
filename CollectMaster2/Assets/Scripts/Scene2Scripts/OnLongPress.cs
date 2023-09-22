@@ -1,40 +1,69 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class OnLongPress : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
+public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [Tooltip("Basılı tutma süresi (saniye cinsinden)")]
-    public float longPressDuration = 1.0f;
+    private bool pointerDown;
+    private float pointerDownTimer;
+    private int RandomIndex;
+    private int i = 0;
+    public static GameData gameData;
+    [SerializeField] private Transform objTransform;
 
-    [Tooltip("Long press gerçekleştiğinde tetiklenecek UnityEvent")]
-    public UnityEvent onLongPress;
+    [SerializeField]
+    private float requiredHoldTime;
 
-    private bool isPressed = false;
-    private float pressTime = 0.0f;
+    public UnityEvent onLongClick;
+
+    //[SerializeField] private Image fillImage;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        isPressed = true;
-        pressTime = Time.time;
+        pointerDown = true;
+        Debug.Log("OnPointerDown");
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        isPressed = false;
+        Reset();
+        Debug.Log("OnPointerUp");
     }
 
     private void Update()
     {
-        if (isPressed && Time.time - pressTime >= longPressDuration)
+        if (pointerDown)
         {
-            // Belirtilen süre boyunca basılı tutuldu, olayı tetikle
-            onLongPress.Invoke();
-            isPressed = false; // Tek seferlik tetikleme için basılı tutma işlemini durdurun
+            pointerDownTimer += Time.deltaTime;
+            if (pointerDownTimer >= requiredHoldTime)
+            {
+                if (onLongClick != null)
+                    onLongClick.Invoke();
+
+                Reset();
+            }
+            //fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+            while (i<gameData.collectedObjects.Count)
+            {
+                RandomIndex = Random.Range(0, gameData.collectedObjects.Count);
+                gameData.collectedObjects.RemoveAt(RandomIndex);
+                i++;
+                Debug.Log(RandomIndex);
+            }
+            
+            
+            //var randomObject = gameData.collectedObjects[RandomIndex];
+            //Instantiate(Resources.Load("Cube"), objTransform.position, Quaternion.identity);
         }
     }
-}
 
+    private void Reset()
+    {
+        pointerDown = false;
+        pointerDownTimer = 0;
+       // fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+    }
+
+}
 
