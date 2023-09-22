@@ -9,7 +9,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private float pointerDownTimer;
     private int RandomIndex;
     private int i = 0;
-    public static GameData gameData;
+    public  GameData gameData;
     [SerializeField] private Transform objTransform;
 
     [SerializeField]
@@ -36,6 +36,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (pointerDown)
         {
             pointerDownTimer += Time.deltaTime;
+            Debug.Log(gameData.collectedObjects.Count);
             if (pointerDownTimer >= requiredHoldTime)
             {
                 if (onLongClick != null)
@@ -47,14 +48,17 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             while (i<gameData.collectedObjects.Count)
             {
                 RandomIndex = Random.Range(0, gameData.collectedObjects.Count);
+                string randomObject = gameData.collectedObjects[RandomIndex];
+                 Instantiate(Resources.Load(randomObject), objTransform.position, Quaternion.identity);
                 gameData.collectedObjects.RemoveAt(RandomIndex);
-                i++;
-                Debug.Log(RandomIndex);
+                
+                
+          
             }
             
             
-            //var randomObject = gameData.collectedObjects[RandomIndex];
-            //Instantiate(Resources.Load("Cube"), objTransform.position, Quaternion.identity);
+           
+            
         }
     }
 
