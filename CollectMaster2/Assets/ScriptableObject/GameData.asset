@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  countdownTimer: 10
+  timeDuration: 0
   holeSize: 0
   income: 0
+  coin: 0
+  collectedObjects:
+  - Cube
+  holeSizeLevel: 0
+  timeLevel: 0
+  IncomeLevel: 0
