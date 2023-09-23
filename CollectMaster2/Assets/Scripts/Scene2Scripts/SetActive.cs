@@ -18,7 +18,7 @@ public class SetActive : MonoBehaviour
 
    public void RandomGameObject()
    {
-      randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count - 1, usedIndicesGameObject);
+      randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count , usedIndicesGameObject);
       string randomObject = gameData.collectedObjects[randomIndex];
 
 

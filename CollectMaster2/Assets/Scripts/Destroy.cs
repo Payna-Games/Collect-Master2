@@ -31,7 +31,7 @@ public class DestroyTrigger : MonoBehaviour
                 CoinCollect.Create(holeTransform.position, collectible.GetCoin()+increaseCoin);
                 objCount++;
 
-                if (objCount<objCountLimit)
+                if (objCount<=objCountLimit)
                 {
                     gameData.collectedObjects.Add(collectible.name);
                 }
