@@ -9,6 +9,7 @@ public class CoinCollect : MonoBehaviour
     private TextMeshPro textMesh;
     private float disappearTime;
     private Color textColor;
+    
     private void Awake()
     {
         textMesh = GetComponent<TextMeshPro>();

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1805788065185487780}
   - component: {fileID: 4453177909807986638}
   - component: {fileID: 7620150004454754537}
+  - component: {fileID: 1737016798543395205}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -149,3 +150,17 @@ MonoBehaviour:
   size: 0.3
   name: Red Sphere
   coin: 1
+--- !u!114 &1737016798543395205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277708152297495412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d203e0202cfb84997fb558136a57ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition:
+  - {fileID: 0}

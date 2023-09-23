@@ -19,6 +19,12 @@ MonoBehaviour:
   coin: 0
   collectedObjects:
   - Cube
+  - Cylinder
+  - Cylinder
+  - Cylinder
+  - Cube
+  - Cube
+  - Cube
   holeSizeLevel: 0
   timeLevel: 0
   IncomeLevel: 0

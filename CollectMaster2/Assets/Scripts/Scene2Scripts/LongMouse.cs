@@ -15,12 +15,13 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private int RandomIndex;
     private int i = 0;
     public  GameData gameData;
-    [SerializeField] private Transform objTransform;
-    public Transform[] targetPosition; // Hedef pozisyon
+    public Transform objTransform;
+     
     public float moveSpeed = 5f;
     private int randomTargetPositions;
 
     private GameObject instantiatedObject;
+    private string randomObject;
 
     
 
@@ -42,8 +43,9 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Reset();
+       
         Debug.Log("OnPointerUp");
+        pointerDown = false;
     }
 
     private bool spawningObject = false;
@@ -52,33 +54,19 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         if (pointerDown)
         {
-            
-            
-            
-                
-            SpawnRandomObject();
-            
-                   
-            
-            Vector3 direction = targetPosition[1].position - instantiatedObject.transform.position;
-        instantiatedObject.transform.rotation = Quaternion.LookRotation(direction);
 
-        
-        Rigidbody rb = instantiatedObject.GetComponent<Rigidbody>();
-        float forceMagnitude = 1f; 
-        Vector3 forceDirection = direction.normalized; 
-        Vector3 force = forceDirection * forceMagnitude;
 
-        rb.AddForce(force, ForceMode.Impulse);
-    
+
+
+           // CollectObject.Create(objTransform.position);
+            
+            
+
         }
+
     }
 
-    private void SpawnRandomObject()
-    {
-        RandomIndex = Random.Range(0, gameData.collectedObjects.Count);
-        string randomObject = gameData.collectedObjects[RandomIndex];
-         instantiatedObject = Instantiate(Resources.Load(randomObject), objTransform.position, Quaternion.identity) as GameObject;
+
 
  //  else if (randomObject == "Cylinder")
       //  {
@@ -94,38 +82,31 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
       //  }StartCoroutine(MoveObjectToTarget(instantiatedObject));
     }
 
-    private int TargetObject()
-    {
-        
-    }
-    
+    // private int CreateRandomNumbers(int min, int max)
+    // {
+    //
+    //
+    //    int randomNumber = Random.Range(min, max);
+    //    return randomNumber;
+    //
+    //
+    // }
 
-    private void Reset()
-    {
-        pointerDown = false;
-        pointerDownTimer = 0;
-       // fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
-    }
 
-    private int CreateRandomNumbers(int min, int max)
-    {
-        
-        int randomNumber;
-        do
-        {
-            randomNumber = Random.Range(min,max+1);
-        } while (usedRandomNumbers.Contains(randomNumber));
 
-        usedRandomNumbers.Add(randomNumber);
-
-        
-        if (usedRandomNumbers.Count >= max- min + 1)
-        {
-            usedRandomNumbers.Clear();
-        }
-
-        return randomNumber; 
-    }
-
-}
-
+//     
+//     int randomNumber;
+//     do
+//     {
+//         randomNumber = Random.Range(min,max+1);
+//     } while (usedRandomNumbers.Contains(randomNumber));
+//
+//     usedRandomNumbers.Add(randomNumber);
+//
+//     
+//     if (usedRandomNumbers.Count >= max- min + 1)
+//     {
+//         usedRandomNumbers.Clear();
+//     }
+//
+//     return randomNumber; 
