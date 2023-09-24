@@ -34,7 +34,7 @@ public class SetActive : MonoBehaviour
       {
          //mavi
          randomCubePosition = GetUniqueRandomIndex(0, 9, usedIndicesCube);
-         transforms[randomCubePosition].gameObject.SetActive(true);
+         
          Debug.Log( randomCubePosition);
          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
         
@@ -43,7 +43,7 @@ public class SetActive : MonoBehaviour
       {
          //kırmızı
          randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
-         transforms[randomCubePosition].gameObject.SetActive(true);
+        // transforms[randomCubePosition].gameObject.SetActive(true);
          Debug.Log( randomCubePosition);
          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
       }
@@ -51,7 +51,7 @@ public class SetActive : MonoBehaviour
       {
          //sarı
          randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
-         transforms[randomCubePosition].gameObject.SetActive(true);
+         //transforms[randomCubePosition].gameObject.SetActive(true);
          Debug.Log( randomCubePosition);
          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
       }
@@ -59,7 +59,7 @@ public class SetActive : MonoBehaviour
       {
          //yeşil
          randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
-         transforms[randomCubePosition].gameObject.SetActive(true);
+       //  transforms[randomCubePosition].gameObject.SetActive(true);
          Debug.Log( randomCubePosition);
          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
       }
