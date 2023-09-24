@@ -2,11 +2,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private bool pointerDown = false;
     private float pointerDownTimer;
+    private bool canCallMethod = true;
+    private float callCooldown = 0.2f;
 
     [SerializeField]
     private float requiredHoldTime;
@@ -31,7 +35,7 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     private void Update()
     {
-        if (pointerDown)
+        if (pointerDown && canCallMethod)
         {
             // pointerDownTimer += Time.deltaTime;
             // if (pointerDownTimer >= requiredHoldTime)
@@ -42,9 +46,17 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             //     Reset();
             // }
             // fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+
+
+            // pointerDownTimer += Time.deltaTime;
+
             setActiveScript.RandomGameObject();
-            
+            canCallMethod = false;
+            StartCoroutine(ResetCallCooldown());
+
+
         }
+
     }
 
     private void Reset()
@@ -53,5 +65,10 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         pointerDownTimer = 0;
         //fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
     }
-
+    private  IEnumerator ResetCallCooldown()
+    {
+        yield return new WaitForSeconds(callCooldown);
+        
+        canCallMethod = true; // Bir sonraki çağrıyı kabul et
+    }
 }
