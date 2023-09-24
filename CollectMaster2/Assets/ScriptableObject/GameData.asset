@@ -18,42 +18,9 @@ MonoBehaviour:
   income: 0
   coin: 36
   collectedObjects:
-  - Capsule
-  - Capsule
-  - Cylinder
-  - Capsule
-  - Capsule
-  - Capsule
-  - Capsule
-  - Capsule
-  - Capsule
-  - Cylinder
-  - Capsule
-  - Cylinder
-  - Cylinder
-  - Cylinder
-  - Cylinder
-  - Cylinder
-  - Cylinder
-  - Cylinder
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Sphere
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
+  - null
+  - null
+  - null
   holeSizeLevel: 3
   timeLevel: 0
   IncomeLevel: 0

@@ -19,12 +19,18 @@ public class SetActive : MonoBehaviour
    List<int> usedIndicesCapsule = new List<int>();
    List<int> usedIndicesSphere = new List<int>();
 
+
+  
+
+   private string IndexToChange = "null";
    public Transform[] transforms;
 
    public void RandomGameObject()
    {
       randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count , usedIndicesGameObject);
+      Debug.Log(gameData.collectedObjects.Count);
       string randomObject = gameData.collectedObjects[randomIndex];
+      
       
 
 
@@ -35,33 +41,50 @@ public class SetActive : MonoBehaviour
          //mavi
          randomCubePosition = GetUniqueRandomIndex(0, 9, usedIndicesCube);
          
-         Debug.Log( randomCubePosition);
-         var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+         
+         
+         if (gameData.collectedObjects.Count>0)
+         {
+            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+            gameData.collectedObjects[randomIndex] = IndexToChange;
+         }
+         
         
       }
       else if (randomObject == "Cylinder")
       {
          //kırmızı
          randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
-        // transforms[randomCubePosition].gameObject.SetActive(true);
-         Debug.Log( randomCubePosition);
-         var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+         
+         
+         
+            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+            gameData.collectedObjects[randomIndex] = IndexToChange;
+         
+         
       }
       else if (randomObject == "Capsule")
       {
          //sarı
          randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
-         //transforms[randomCubePosition].gameObject.SetActive(true);
-         Debug.Log( randomCubePosition);
-         var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+         
+         
+            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+            gameData.collectedObjects[randomIndex] = IndexToChange;
+         
+         
       }
       else if (randomObject == "Sphere")
       {
          //yeşil
          randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
-       //  transforms[randomCubePosition].gameObject.SetActive(true);
-         Debug.Log( randomCubePosition);
-         var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+         
+         
+         
+            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+            gameData.collectedObjects[randomIndex] = IndexToChange;
+         
+         
       }
    }
 
