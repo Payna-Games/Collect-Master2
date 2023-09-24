@@ -13,18 +13,47 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 0
+  timeDuration: 16
   holeSize: 0
   income: 0
-  coin: 0
+  coin: 36
   collectedObjects:
-  - Cube
+  - Capsule
+  - Capsule
+  - Cylinder
+  - Capsule
+  - Capsule
+  - Capsule
+  - Capsule
+  - Capsule
+  - Capsule
+  - Cylinder
+  - Capsule
   - Cylinder
   - Cylinder
   - Cylinder
+  - Cylinder
+  - Cylinder
+  - Cylinder
+  - Cylinder
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
+  - Sphere
   - Cube
   - Cube
   - Cube
-  holeSizeLevel: 0
+  - Cube
+  - Cube
+  - Cube
+  - Cube
+  - Cube
+  - Cube
+  holeSizeLevel: 3
   timeLevel: 0
   IncomeLevel: 0

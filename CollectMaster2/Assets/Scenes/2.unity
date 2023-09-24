@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13774198}
   m_Layer: 0
-  m_Name: Green
+  m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 18742745}
   - component: {fileID: 18742744}
   m_Layer: 0
-  m_Name: Green3
+  m_Name: Yellow3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,6 +564,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a346445ef528ab8419cd0cdc81c78009, type: 3}
+--- !u!4 &170688848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3967127718406626050, guid: a346445ef528ab8419cd0cdc81c78009,
+    type: 3}
+  m_PrefabInstance: {fileID: 170688847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &227303234
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +583,7 @@ GameObject:
   - component: {fileID: 227303237}
   - component: {fileID: 227303236}
   m_Layer: 0
-  m_Name: Green8
+  m_Name: Yellow8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +719,7 @@ GameObject:
   - component: {fileID: 302085763}
   - component: {fileID: 302085762}
   m_Layer: 0
-  m_Name: Red3
+  m_Name: Green3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +824,7 @@ GameObject:
   - component: {fileID: 360659525}
   - component: {fileID: 360659524}
   m_Layer: 0
-  m_Name: Yellow7
+  m_Name: Red7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,7 +929,7 @@ GameObject:
   - component: {fileID: 508741517}
   - component: {fileID: 508741516}
   m_Layer: 0
-  m_Name: Yellow2
+  m_Name: Red2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1133,7 +1139,7 @@ GameObject:
   - component: {fileID: 616161085}
   - component: {fileID: 616161084}
   m_Layer: 0
-  m_Name: Red4
+  m_Name: Green4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1349,7 @@ GameObject:
   - component: {fileID: 647720970}
   - component: {fileID: 647720969}
   m_Layer: 0
-  m_Name: Yellow8
+  m_Name: Red8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,7 +1559,7 @@ GameObject:
   - component: {fileID: 796006436}
   - component: {fileID: 796006435}
   m_Layer: 0
-  m_Name: Green1
+  m_Name: Yellow1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1658,7 +1664,7 @@ GameObject:
   - component: {fileID: 796816140}
   - component: {fileID: 796816139}
   m_Layer: 0
-  m_Name: Red2
+  m_Name: Green2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2002,7 +2008,7 @@ GameObject:
   - component: {fileID: 900308164}
   - component: {fileID: 900308163}
   m_Layer: 0
-  m_Name: Red5
+  m_Name: Green5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2104,7 +2110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943970531}
   m_Layer: 0
-  m_Name: Red
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2147,7 +2153,7 @@ GameObject:
   - component: {fileID: 967115933}
   - component: {fileID: 967115932}
   m_Layer: 0
-  m_Name: Green6
+  m_Name: Yellow6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,7 +2258,7 @@ GameObject:
   - component: {fileID: 1032682962}
   - component: {fileID: 1032682961}
   m_Layer: 0
-  m_Name: Red8
+  m_Name: Green8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2357,7 +2363,7 @@ GameObject:
   - component: {fileID: 1098153928}
   - component: {fileID: 1098153927}
   m_Layer: 0
-  m_Name: Yellow5
+  m_Name: Red5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2462,7 +2468,7 @@ GameObject:
   - component: {fileID: 1105451136}
   - component: {fileID: 1105451135}
   m_Layer: 0
-  m_Name: Red1
+  m_Name: Green1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2778,7 +2784,7 @@ GameObject:
   - component: {fileID: 1223603615}
   - component: {fileID: 1223603614}
   m_Layer: 0
-  m_Name: Green4
+  m_Name: Yellow4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,7 +2889,7 @@ GameObject:
   - component: {fileID: 1228252005}
   - component: {fileID: 1228252004}
   m_Layer: 0
-  m_Name: Green7
+  m_Name: Yellow7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2985,7 +2991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1297905391}
   m_Layer: 0
-  m_Name: Yellow
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3074,6 +3080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
+  holeTransform: {fileID: 170688848}
   transforms:
   - {fileID: 585562090}
   - {fileID: 2005443500}
@@ -3083,16 +3090,7 @@ MonoBehaviour:
   - {fileID: 1625090264}
   - {fileID: 792760210}
   - {fileID: 1132527754}
-  - {fileID: 1105451134}
-  - {fileID: 796816138}
-  - {fileID: 302085761}
-  - {fileID: 616161083}
-  - {fileID: 900308162}
-  - {fileID: 900308162}
-  - {fileID: 1373838125}
-  - {fileID: 1991843461}
-  - {fileID: 1032682960}
-  - {fileID: 1377066625}
+  - {fileID: 1361027662}
   - {fileID: 1470737271}
   - {fileID: 508741515}
   - {fileID: 2099782660}
@@ -3111,6 +3109,15 @@ MonoBehaviour:
   - {fileID: 1228252003}
   - {fileID: 227303235}
   - {fileID: 1868862306}
+  - {fileID: 1105451134}
+  - {fileID: 796816138}
+  - {fileID: 302085761}
+  - {fileID: 616161083}
+  - {fileID: 900308162}
+  - {fileID: 1373838125}
+  - {fileID: 1991843461}
+  - {fileID: 1032682960}
+  - {fileID: 1377066625}
 --- !u!1 &1361027661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,7 +3236,7 @@ GameObject:
   - component: {fileID: 1373838127}
   - component: {fileID: 1373838126}
   m_Layer: 0
-  m_Name: Red6
+  m_Name: Green6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3334,7 +3341,7 @@ GameObject:
   - component: {fileID: 1377066627}
   - component: {fileID: 1377066626}
   m_Layer: 0
-  m_Name: Red9
+  m_Name: Green9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3479,7 +3486,7 @@ GameObject:
   - component: {fileID: 1470737273}
   - component: {fileID: 1470737272}
   m_Layer: 0
-  m_Name: Yellow1
+  m_Name: Red1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3584,7 +3591,7 @@ GameObject:
   - component: {fileID: 1533458326}
   - component: {fileID: 1533458325}
   m_Layer: 0
-  m_Name: Yellow6
+  m_Name: Red6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3897,7 +3904,7 @@ GameObject:
   - component: {fileID: 1834328175}
   - component: {fileID: 1834328174}
   m_Layer: 0
-  m_Name: Yellow9
+  m_Name: Red9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4134,7 +4141,7 @@ GameObject:
   - component: {fileID: 1868862308}
   - component: {fileID: 1868862307}
   m_Layer: 0
-  m_Name: Green9
+  m_Name: Yellow9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4239,7 +4246,7 @@ GameObject:
   - component: {fileID: 1871738215}
   - component: {fileID: 1871738214}
   m_Layer: 0
-  m_Name: Green5
+  m_Name: Yellow5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4344,7 +4351,7 @@ GameObject:
   - component: {fileID: 1991843463}
   - component: {fileID: 1991843462}
   m_Layer: 0
-  m_Name: Red7
+  m_Name: Green7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4554,7 +4561,7 @@ GameObject:
   - component: {fileID: 2024486563}
   - component: {fileID: 2024486562}
   m_Layer: 0
-  m_Name: Green2
+  m_Name: Yellow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4764,7 +4771,7 @@ GameObject:
   - component: {fileID: 2058744277}
   - component: {fileID: 2058744276}
   m_Layer: 0
-  m_Name: Yellow4
+  m_Name: Red4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4869,7 +4876,7 @@ GameObject:
   - component: {fileID: 2099782662}
   - component: {fileID: 2099782661}
   m_Layer: 0
-  m_Name: Yellow3
+  m_Name: Red3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

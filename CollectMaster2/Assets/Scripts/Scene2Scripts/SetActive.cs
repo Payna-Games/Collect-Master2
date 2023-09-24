@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
+
 
 
 public class SetActive : MonoBehaviour
 {
    public GameData gameData;
+   [SerializeField] private Transform holeTransform;
    private int randomIndex;
    private int randomCubePosition;
    List<int> usedIndicesGameObject = new List<int>();
@@ -20,6 +24,7 @@ public class SetActive : MonoBehaviour
    {
       randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count , usedIndicesGameObject);
       string randomObject = gameData.collectedObjects[randomIndex];
+      var gameObject =Instantiate(Resources.Load(randomObject), holeTransform.transform.position,Quaternion.identity);
 
 
       Debug.Log("randomIndex" + randomIndex);
@@ -27,27 +32,33 @@ public class SetActive : MonoBehaviour
       if (randomObject == "Cube")
       {
          //mavi
-         randomCubePosition = GetUniqueRandomIndex(0, 8, usedIndicesCube);
+         randomCubePosition = GetUniqueRandomIndex(0, 9, usedIndicesCube);
          transforms[randomCubePosition].gameObject.SetActive(true);
+         Debug.Log( randomCubePosition);
         
       }
       else if (randomObject == "Cylinder")
       {
          //kırmızı
-         randomCubePosition = GetUniqueRandomIndex(8, 18, usedIndicesCylinder);
+         randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
          transforms[randomCubePosition].gameObject.SetActive(true);
+         Debug.Log( randomCubePosition);
          
       }
       else if (randomObject == "Capsule")
       {
+         //sarı
          randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
          transforms[randomCubePosition].gameObject.SetActive(true);
+         Debug.Log( randomCubePosition);
         
       }
       else if (randomObject == "Sphere")
       {
+         //yeşil
          randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
          transforms[randomCubePosition].gameObject.SetActive(true);
+         Debug.Log( randomCubePosition);
        
       }
    }
