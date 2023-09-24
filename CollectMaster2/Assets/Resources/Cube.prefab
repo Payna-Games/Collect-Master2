@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2967159033726513947}
   - component: {fileID: 8089940600617648449}
   - component: {fileID: 7748440133875519423}
+  - component: {fileID: -5632341419028393178}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3009011710075763700}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.48, z: 1.58}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
@@ -132,7 +133,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7748440133875519423
 MonoBehaviour:
@@ -149,3 +150,19 @@ MonoBehaviour:
   size: 0.3
   name: Cube
   coin: 1
+--- !u!114 &-5632341419028393178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009011710075763700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef2bcd17651c294f80bc33432c51567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 4412910115916076299, guid: acf081f9251aefd4f9bdb29cc5cbdbf4,
+    type: 3}
+  setActiveScript: {fileID: 5158223364553949456, guid: e40af2429fd635347b49ea2c72686925,
+    type: 3}

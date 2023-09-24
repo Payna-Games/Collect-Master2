@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1805788065185487780}
   - component: {fileID: 4453177909807986638}
   - component: {fileID: 7620150004454754537}
-  - component: {fileID: 1737016798543395205}
+  - component: {fileID: 4278480570291185422}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -102,7 +102,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -150,7 +150,7 @@ MonoBehaviour:
   size: 0.3
   name: Red Sphere
   coin: 1
---- !u!114 &1737016798543395205
+--- !u!114 &4278480570291185422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,8 +159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277708152297495412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d203e0202cfb84997fb558136a57ec, type: 3}
+  m_Script: {fileID: 11500000, guid: eef2bcd17651c294f80bc33432c51567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition:
-  - {fileID: 0}
+  targetPosition: {fileID: 4412910115916076299, guid: acf081f9251aefd4f9bdb29cc5cbdbf4,
+    type: 3}
+  setActiveScript: {fileID: 5158223364553949456, guid: e40af2429fd635347b49ea2c72686925,
+    type: 3}
