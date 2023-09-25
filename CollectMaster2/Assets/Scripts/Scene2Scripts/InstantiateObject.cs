@@ -7,7 +7,7 @@ using DG.Tweening;
 public class InstantiateObject : MonoBehaviour
 {
     private Transform targetPosition;
-    private float duration = 1f;
+    private float duration = 0.75f;
     public AnimationCurve[] curve;
 
     private SetActive setActiveScript;
@@ -21,14 +21,14 @@ public class InstantiateObject : MonoBehaviour
 
     private void Start()
     {
-        transform.DOLocalMoveY(targetPosition.localPosition.y + 1f, duration / 2f).SetEase(curve[0]).OnComplete(() =>
+        transform.DOLocalMoveY(targetPosition.localPosition.y + 0.4f, duration / 2f).SetEase(curve[0]).OnComplete(() =>
         {
             transform.DOMove(targetPosition.position, duration).SetEase(curve[1]).OnComplete(() =>
             {
 
                 //Destroy(gameObject);
                 //targetPosition.gameObject.SetActive(true);
-                SetActiveField(targetPosition.position, 0.3f);
+                SetActiveField(targetPosition.position, 0.2f);
             });
         });
 
