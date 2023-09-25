@@ -15,9 +15,9 @@ public class SetActive : MonoBehaviour
    public int randomCubePosition;
    List<int> usedIndicesGameObject = new List<int>();
    List<int> usedIndicesCube = new List<int>();
-   List<int> usedIndicesCylinder = new List<int>();
-   List<int> usedIndicesCapsule = new List<int>();
-   List<int> usedIndicesSphere = new List<int>();
+   // List<int> usedIndicesCylinder = new List<int>();
+   // List<int> usedIndicesCapsule = new List<int>();
+   // List<int> usedIndicesSphere = new List<int>();
 
 
   
@@ -30,63 +30,54 @@ public class SetActive : MonoBehaviour
       randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count , usedIndicesGameObject);
       Debug.Log(gameData.collectedObjects.Count);
       string randomObject = gameData.collectedObjects[randomIndex];
+
       
-      
-
-
-      Debug.Log("randomIndex" + randomIndex);
-
-      if (randomObject == "Cube")
-      {
-         //mavi
-         randomCubePosition = GetUniqueRandomIndex(0, 9, usedIndicesCube);
+      randomCubePosition = GetUniqueRandomIndex(0, 87, usedIndicesCube);
+      Debug.Log("randomIndex" + randomCubePosition);
          
          
-         
-         if (gameData.collectedObjects.Count>0)
-         {
-            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
             gameData.collectedObjects[randomIndex] = IndexToChange;
-         }
+        
          
         
       }
-      else if (randomObject == "Cylinder")
-      {
-         //kırmızı
-         randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
-         
-         
-         
-            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-            gameData.collectedObjects[randomIndex] = IndexToChange;
-         
-         
-      }
-      else if (randomObject == "Capsule")
-      {
-         //sarı
-         randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
-         
-         
-            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-            gameData.collectedObjects[randomIndex] = IndexToChange;
-         
-         
-      }
-      else if (randomObject == "Sphere")
-      {
-         //yeşil
-         randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
-         
-         
-         
-            var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-            gameData.collectedObjects[randomIndex] = IndexToChange;
-         
-         
-      }
-   }
+   //    else if (randomObject == "Cylinder")
+   //    {
+   //       //kırmızı
+   //       randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
+   //       
+   //       
+   //       
+   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+   //          gameData.collectedObjects[randomIndex] = IndexToChange;
+   //       
+   //       
+   //    }
+   //    else if (randomObject == "Capsule")
+   //    {
+   //       //sarı
+   //       randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
+   //       
+   //       
+   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+   //          gameData.collectedObjects[randomIndex] = IndexToChange;
+   //       
+   //       
+   //    }
+   //    else if (randomObject == "Sphere")
+   //    {
+   //       //yeşil
+   //       randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
+   //       
+   //       
+   //       
+   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
+   //          gameData.collectedObjects[randomIndex] = IndexToChange;
+   //       
+   //       
+   //    }
+   // }
 
 
    int GetUniqueRandomIndex(int min, int max, List<int> usedList)

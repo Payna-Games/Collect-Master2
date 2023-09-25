@@ -10,9 +10,9 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private bool pointerDown = false;
     private float pointerDownTimer;
     private bool canCallMethod = true;
-    private float callCooldown = 0.2f;
+    public float callCooldown = 0.2f;
 
-    [SerializeField]
+   
     private float requiredHoldTime;
 
     public UnityEvent onLongClick;

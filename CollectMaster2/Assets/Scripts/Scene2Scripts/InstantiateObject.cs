@@ -11,6 +11,7 @@ public class InstantiateObject : MonoBehaviour
     public AnimationCurve[] curve;
 
     private SetActive setActiveScript;
+    
 
     private void Awake()
     {
@@ -25,11 +26,26 @@ public class InstantiateObject : MonoBehaviour
             transform.DOMove(targetPosition.position, duration).SetEase(curve[1]).OnComplete(() =>
             {
 
-                Destroy(gameObject);
-                targetPosition.gameObject.SetActive(true);
+                //Destroy(gameObject);
+                //targetPosition.gameObject.SetActive(true);
+                SetActiveField(targetPosition.position, 0.3f);
             });
         });
 
 
+    }
+
+    private void SetActiveField(Vector3 center,float radius)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+
+        foreach (var hitCollider in hitColliders)
+        {
+            hitCollider.gameObject.SetActive(false);
+            Debug.Log("metot çalışıyor");
+            
+        }
+       
+           
     }
 }
