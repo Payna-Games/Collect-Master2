@@ -21,7 +21,7 @@ public class CountdownTimer : MonoBehaviour
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
-        //currentTime = gameData.countdownTimer;
+        
         countdownText.text = "00:" + gameData.timeDuration.ToString();
         UpdateUI();
         timeImageAnimator = GameObject.Find("TimeImage").GetComponent<Animator>();

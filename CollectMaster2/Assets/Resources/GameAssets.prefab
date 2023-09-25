@@ -47,7 +47,7 @@ MonoBehaviour:
   collectedCoinPrefab: {fileID: 8794226129883494455, guid: 4b6441c2393ff764d92c0d762fe4c737,
     type: 3}
   collectedObjPrefabs:
-  - {fileID: 3009011710075763700, guid: 5ce796486a751bb419d8d38ae1fb2b47, type: 3}
-  - {fileID: 1277708152297495412, guid: 4900d7090bbc56e4c8bfdcee78deaff9, type: 3}
-  - {fileID: 8836861827158782352, guid: a6c1e2c24aff36b489cbb0525f3a9d76, type: 3}
-  - {fileID: 4295636304828767535, guid: 0f794529bcd8aba448c3d63969eb6af6, type: 3}
+  - {fileID: 1386887706226303360, guid: 92d31e094bf614f4e8c9068ffb1e6e3c, type: 3}
+  - {fileID: 8322319705192281553, guid: c4df8e1bfa957604a89176e892c5700c, type: 3}
+  - {fileID: 104059422609174579, guid: e00ddc948cd8f1b439a43a147935c3fe, type: 3}
+  - {fileID: 8672034991615477755, guid: 4520d2c4d76bfe2468ed3363ecb796e2, type: 3}

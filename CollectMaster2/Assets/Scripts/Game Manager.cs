@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
             countdownTimer.isCountingDown = true;
             countdownTimer.StartCountdown();
             
-            Debug.Log("tıklandı");
+          
         }
     }
 
@@ -89,13 +89,5 @@ public class GameManager : MonoBehaviour
         coinText.text = gameData.coin.ToString();
     }
     
-    public void Update()
-    {
-        if (!gameOver)
-        {
-           
-            
-           
-        }
-    }
+   
 }
