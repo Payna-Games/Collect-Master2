@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private FloatingJoystick _joystick;
  
    
-    [SerializeField] private float _moveSpeed;
+    public float _moveSpeed;
    
     private void FixedUpdate()
     {

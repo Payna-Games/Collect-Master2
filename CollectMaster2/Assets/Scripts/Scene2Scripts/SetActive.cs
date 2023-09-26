@@ -59,7 +59,7 @@ public class SetActive : MonoBehaviour
             Quaternion.identity);
          gameData.collectedObjects[randomIndex] = IndexToChange;
          imageRatio += 0.01f;
-         percent.text = (imageRatio * 100).ToString() + "%";
+         percent.text = (imageRatio*100).ToString("F0") + "%";
          allObjectsAreDeleted = true;
       }
 
