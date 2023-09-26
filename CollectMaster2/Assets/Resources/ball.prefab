@@ -83,6 +83,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8140162376638317712, guid: 5c231628ee3a3e94a9eaf4bf7610fe9d,
+        type: 3}
+      propertyPath: objName
+      value: ball
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6030764887523485716, guid: 5c231628ee3a3e94a9eaf4bf7610fe9d, type: 3}
     - {fileID: 3084036681555240498, guid: 5c231628ee3a3e94a9eaf4bf7610fe9d, type: 3}

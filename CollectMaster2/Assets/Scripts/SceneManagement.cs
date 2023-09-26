@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    private GameManager gameManager;
+    private GameManager gameManagerScript;
+    private GameObject gameManagerObject;
+    private GameManager2 gameManager2Script;
+    private GameObject gameManager2Object;
+    
     public GameData gameData;
     private int currentSceneIndex;
-    private bool isWaiting = false;
+  
 
     [SerializeField] private DestroyTrigger destroyTrigger;
     //private CountdownTimer timer;
@@ -31,8 +35,18 @@ public class SceneManagement : MonoBehaviour
     
     void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        //_gameManager.gameOver = false;
+        gameManagerObject = GameObject.Find("Game Manager");
+        gameManager2Object = GameObject.Find("GameManager2");
+        if (gameManagerObject != null)
+        {
+            gameManagerScript = gameManagerObject.GetComponent<GameManager>();
+        }
+        if (gameManager2Object != null)
+        {
+            gameManager2Script = gameManager2Object.GetComponent<GameManager2>();
+        }
+         
+        
     }
 
     
@@ -51,8 +65,8 @@ public class SceneManagement : MonoBehaviour
 
     public void TryAgainScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex-1);
         
     }
     
@@ -66,13 +80,13 @@ public class SceneManagement : MonoBehaviour
     }
     private IEnumerator WaitForSeconds()
     {
-        isWaiting = true;
+        
 
        
         yield return new WaitForSeconds(2f);
         NextScene();
 
-        isWaiting = false;
+        
     }
 }
     

@@ -78,6 +78,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6547399909031903397, guid: 00b1108bcc8964848933d2fb221a5bb3,
+        type: 3}
+      propertyPath: objName
+      value: helmet
+      objectReference: {fileID: 0}
     - target: {fileID: 7156958088610152628, guid: 00b1108bcc8964848933d2fb221a5bb3,
         type: 3}
       propertyPath: m_Name

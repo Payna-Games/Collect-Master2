@@ -11,7 +11,7 @@ public class Collectible : MonoBehaviour
 
     
 
-    public string name;
+    public string objName;
 
     public int coin;
 
@@ -30,9 +30,6 @@ public class Collectible : MonoBehaviour
         return coin;
     }
 
-    public string Name()
-    {
-        return name;
-    }
+    
     
 }

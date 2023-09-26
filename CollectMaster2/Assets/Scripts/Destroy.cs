@@ -33,7 +33,7 @@ public class DestroyTrigger : MonoBehaviour
 
                 if (objCount<=objCountLimit)
                 {
-                    gameData.collectedObjects.Add(collectible.name);
+                    gameData.collectedObjects.Add(collectible.objName);
                 }
 
                 
