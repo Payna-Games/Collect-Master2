@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class SetActive : MonoBehaviour
 {
-   
+
 
    public GameData gameData;
    [SerializeField] private Transform holeTransform;
@@ -17,105 +17,77 @@ public class SetActive : MonoBehaviour
    public int randomCubePosition;
    List<int> usedIndicesGameObject = new List<int>();
    List<int> usedIndicesCube = new List<int>();
-   
    public float imageRatio;
    [SerializeField] private TextMeshProUGUI percent;
    private int objectCount;
+   bool allObjectsAreDeleted = true;
+   private string IndexToChange = "deleted";
+   public Transform[] transforms;
 
-  
+
+
    private void Start()
    {
       imageRatio = 0;
       objectCount = gameData.collectedObjects.Count;
    }
-  
 
-   private string IndexToChange = "null";
-   public Transform[] transforms;
+
 
    public void RandomGameObject()
    {
-      randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count , usedIndicesGameObject);
-      Debug.Log(gameData.collectedObjects.Count);
+      randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count, usedIndicesGameObject);
       string randomObject = gameData.collectedObjects[randomIndex];
-
-      
       randomCubePosition = GetUniqueRandomIndex(0, 87, usedIndicesCube);
-      Debug.Log("randomIndex" + randomCubePosition);
-         
-         
-          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-            gameData.collectedObjects[randomIndex] = IndexToChange;
-           //float result = (float)objectCount / 100f;
-           // int roundInt = Mathf.RoundToInt(result);
-           imageRatio += 0.01f;
-            percent.text = (imageRatio*100 ).ToString() + "%";
 
 
 
-   }
-   //    else if (randomObject == "Cylinder")
-   //    {
-   //       //kırmızı
-   //       randomCubePosition = GetUniqueRandomIndex(9, 18, usedIndicesCylinder);
-   //       
-   //       
-   //       
-   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-   //          gameData.collectedObjects[randomIndex] = IndexToChange;
-   //       
-   //       
-   //    }
-   //    else if (randomObject == "Capsule")
-   //    {
-   //       //sarı
-   //       randomCubePosition = GetUniqueRandomIndex(18, 27, usedIndicesCapsule);
-   //       
-   //       
-   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-   //          gameData.collectedObjects[randomIndex] = IndexToChange;
-   //       
-   //       
-   //    }
-   //    else if (randomObject == "Sphere")
-   //    {
-   //       //yeşil
-   //       randomCubePosition = GetUniqueRandomIndex(27, 36, usedIndicesSphere);
-   //       
-   //       
-   //       
-   //          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
-   //          gameData.collectedObjects[randomIndex] = IndexToChange;
-   //       
-   //       
-   //    }
-   // }
 
-
-   int GetUniqueRandomIndex(int min, int max, List<int> usedList)
-   {
-      int newIndex;
-
-      while (true)
+      foreach (string obj in gameData.collectedObjects)
       {
-         newIndex = Random.Range(min, max);
-
-         if (!usedList.Contains(newIndex))
+         if (obj != "deleted")
          {
-            usedList.Add(newIndex);
-            break; 
-         }
-
-         if (usedList.Count == (max - min))
-         {
-            newIndex = Random.Range(min, max);
+            allObjectsAreDeleted = false;
             break;
          }
+
       }
 
-      return newIndex;
-   }
+      if (!allObjectsAreDeleted)
+      {
+         var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position,
+            Quaternion.identity);
+         gameData.collectedObjects[randomIndex] = IndexToChange;
+         imageRatio += 0.01f;
+         percent.text = (imageRatio * 100).ToString() + "%";
+         allObjectsAreDeleted = true;
+      }
 
+
+      int GetUniqueRandomIndex(int min, int max, List<int> usedList)
+      {
+         int newIndex;
+
+         while (true)
+         {
+            newIndex = Random.Range(min, max);
+
+            if (!usedList.Contains(newIndex))
+            {
+               usedList.Add(newIndex);
+               break;
+            }
+
+            if (usedList.Count == (max - min))
+            {
+               newIndex = Random.Range(min, max);
+               break;
+            }
+         }
+
+         return newIndex;
+      }
+   }
 }
 
 
