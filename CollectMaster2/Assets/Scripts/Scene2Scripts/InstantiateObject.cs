@@ -26,9 +26,10 @@ public class InstantiateObject : MonoBehaviour
             transform.DOMove(targetPosition.position, duration).SetEase(curve[1]).OnComplete(() =>
             {
 
-                //Destroy(gameObject);
-                //targetPosition.gameObject.SetActive(true);
+                
+                
                 SetActiveField(targetPosition.position, 0.2f);
+                Destroy(gameObject);
             });
         });
 
@@ -41,7 +42,7 @@ public class InstantiateObject : MonoBehaviour
 
         foreach (var hitCollider in hitColliders)
         {
-            hitCollider.gameObject.SetActive(false);
+            hitCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
             Debug.Log("metot çalışıyor");
             
         }

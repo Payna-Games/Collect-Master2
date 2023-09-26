@@ -1,25 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
-
-
+using Random = UnityEngine.Random;
 
 
 public class SetActive : MonoBehaviour
 {
+   
+
    public GameData gameData;
    [SerializeField] private Transform holeTransform;
    private int randomIndex;
    public int randomCubePosition;
    List<int> usedIndicesGameObject = new List<int>();
    List<int> usedIndicesCube = new List<int>();
-   // List<int> usedIndicesCylinder = new List<int>();
-   // List<int> usedIndicesCapsule = new List<int>();
-   // List<int> usedIndicesSphere = new List<int>();
+   
+   public float imageRatio;
+   [SerializeField] private TextMeshProUGUI percent;
+   private int objectCount;
 
-
+  
+   private void Start()
+   {
+      imageRatio = 0;
+      objectCount = gameData.collectedObjects.Count;
+   }
   
 
    private string IndexToChange = "null";
@@ -38,10 +46,14 @@ public class SetActive : MonoBehaviour
          
           var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
             gameData.collectedObjects[randomIndex] = IndexToChange;
-        
-         
-        
-      }
+           //float result = (float)objectCount / 100f;
+           // int roundInt = Mathf.RoundToInt(result);
+           imageRatio += 0.01f;
+            percent.text = (imageRatio*100 ).ToString() + "%";
+
+
+
+   }
    //    else if (randomObject == "Cylinder")
    //    {
    //       //kırmızı
