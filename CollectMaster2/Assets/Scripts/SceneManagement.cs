@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class SceneManagement : MonoBehaviour
     
     public GameData gameData;
     private int currentSceneIndex;
-  
+   
 
     [SerializeField] private DestroyTrigger destroyTrigger;
     //private CountdownTimer timer;
@@ -20,17 +21,34 @@ public class SceneManagement : MonoBehaviour
     private void Awake()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //timer = GetComponent<CountdownTimer>();
-
-        if (currentSceneIndex == 0)
+        
+        
+        if (currentSceneIndex == 0 )
         {
-            gameData.timeDuration = 25;
-            gameData.coin = 0;
-            gameData.holeSizeLevel = 0;
-            gameData.timeLevel = 0;
-            gameData.IncomeLevel = 0;
+            //
+            // if (!PlayerPrefs.HasKey("TimeDuration"))
+            // {
+            //     LoadGameData();
+            // }
+            // else if (PlayerPrefs.HasKey("TimeDuration"))
+            // {
+            //    GetGameData();
+            // }
+
+            if (gameData.scene == 0)
+            {
+                LoadGameData();
+               // gameData.timeDuration = 5;
+            }
+
+            CountdownTimer.timeDuration = gameData.timeDuration;
             gameData.collectedObjects.Clear();
+            
         }
+       
+       
+
+
     }
     
     void Start()
@@ -45,8 +63,9 @@ public class SceneManagement : MonoBehaviour
         {
             gameManager2Script = gameManager2Object.GetComponent<GameManager2>();
         }
-         
+       
         
+
     }
 
     
@@ -72,7 +91,7 @@ public class SceneManagement : MonoBehaviour
     
     void Update()
     {
-        if (gameData.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit )
+        if (CountdownTimer.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit )
         {
             StartCoroutine(WaitForSeconds());
         }
@@ -88,6 +107,41 @@ public class SceneManagement : MonoBehaviour
 
         
     }
+    private void LoadGameData()
+    {
+        
+        
+            
+            //PlayerPrefs.SetInt("TimeDuration" ,5);
+            gameData.coin = PlayerPrefs.GetInt("Coin", 0);
+            gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
+            gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
+            gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);
+        
+    }
+
+    // private void SetGameData()
+    // {
+    //     PlayerPrefs.SetInt("Coin" ,gameData.coin);
+    //     PlayerPrefs.SetInt("HoleSizeLevel" ,gameData.holeSizeLevel);
+    //     PlayerPrefs.SetInt("TimeLevel" ,gameData.timeLevel);
+    //     PlayerPrefs.SetInt("IncomeLevel" , gameData.IncomeLevel);
+    //     
+    // }
+    //
+    // private void OnDisable()
+    // {
+    //     SetGameData();
+    // }
+    //
+    // private void GetGameData()
+    // {
+    //     gameData.timeDuration = PlayerPrefs.GetInt("TimeDuration");
+    //     gameData.coin = PlayerPrefs.GetInt("Coin");
+    //     gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel" );
+    //     gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel" );
+    //     gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel" );
+    // }
 }
     
     

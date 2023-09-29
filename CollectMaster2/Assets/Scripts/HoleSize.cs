@@ -11,8 +11,9 @@ public class HoleSize : MonoBehaviour
     [SerializeField] public float scaleStep;
     [SerializeField] private float scaleSpeed;
     [SerializeField] private Image circle;
-
+    public GameData gameData;
     [SerializeField] private Vector3[] targetSize;
+    public Vector3 holeSizee;
     [SerializeField] private int currentSizeIndex = 0;
     
     
@@ -77,7 +78,7 @@ public class HoleSize : MonoBehaviour
        if (increase && !hasIncreased)
        {
            transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
-           
+           holeSizee = transform.localScale;
 
 
        }

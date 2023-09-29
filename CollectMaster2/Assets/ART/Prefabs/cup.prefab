@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0.8
-  name: Cup
+  objName: cup
   coin: 4

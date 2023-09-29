@@ -13,57 +13,12 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 16
+  timeDuration: 5
   holeSize: 0
   income: 0
-  coin: 36
-  collectedObjects:
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - null
-  - null
-  - Cube
-  - Cube
-  - null
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - null
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - null
-  - null
-  - null
-  - null
-  - Cube
-  - null
-  - Cube
-  - Cube
-  - Cube
-  - Cube
-  - null
-  - Cube
-  - null
-  - Cube
-  - Cube
-  - null
-  - Cube
-  - Cube
-  - null
-  - null
-  - Cube
-  - Cube
-  - Cube
-  - null
-  - Cube
-  - Cube
-  holeSizeLevel: 3
-  timeLevel: 0
-  IncomeLevel: 0
+  coin: 126
+  collectedObjects: []
+  holeSizeLevel: 2
+  timeLevel: 2
+  IncomeLevel: 2
+  scene: 0

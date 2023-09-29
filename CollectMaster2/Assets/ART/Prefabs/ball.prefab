@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7140104769982416013}
   - component: {fileID: 8140162376638317712}
   - component: {fileID: 3084036681555240498}
-  - component: {fileID: 6030764887523485716}
+  - component: {fileID: 6234910202624079588}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0.4
-  name: Ball
+  objName: ball
   coin: 2
 --- !u!54 &3084036681555240498
 Rigidbody:
@@ -129,8 +129,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6030764887523485716
-MeshCollider:
+--- !u!135 &6234910202624079588
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,7 +147,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2122681682525997855, guid: ae2cecf23f7b21340b4146aff0196045, type: 3}
+  serializedVersion: 3
+  m_Radius: 1.06
+  m_Center: {x: -3.3124917e-15, y: 0.93238354, z: -3.6230377e-15}

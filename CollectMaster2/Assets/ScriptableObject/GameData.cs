@@ -15,5 +15,6 @@ public class GameData :  ScriptableObject
      public int holeSizeLevel;
      public int timeLevel;
      public int IncomeLevel;
-     
+     public int scene = 0;
+
 }

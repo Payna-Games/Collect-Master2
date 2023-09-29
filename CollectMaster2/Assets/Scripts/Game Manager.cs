@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         gameData.timeDuration += 5;
         gameData.timeLevel++;
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
+       // PlayerPrefs.SetInt("TimeDuration" ,gameData.timeDuration);
 
 
     }

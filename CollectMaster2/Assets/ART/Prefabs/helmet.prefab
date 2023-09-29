@@ -148,5 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0.8
-  name: Helmet
+  objName: helmet
   coin: 2

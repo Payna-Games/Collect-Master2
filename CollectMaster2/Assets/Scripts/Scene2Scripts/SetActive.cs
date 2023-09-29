@@ -72,9 +72,10 @@ public class SetActive : MonoBehaviour
       if (objectCount ==0)
       {
          otherScene = false;
-         StartCoroutine(NextSceneTimer(4));
+        
          if (imageRatio < 1)
          {
+            StartCoroutine(NextSceneTimer(4));
             otherScene = true;
             tryAgainText.text = "Try Again!";
             anim.Play("TimeUpAnimation");
@@ -123,6 +124,8 @@ public class SetActive : MonoBehaviour
       if (otherScene)
       {
          sceneManagement.TryAgainScene();
+         gameData.scene++;
+
       }
 
       
