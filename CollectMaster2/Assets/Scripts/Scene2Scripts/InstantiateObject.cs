@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.Mathematics;
 
 public class InstantiateObject : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class InstantiateObject : MonoBehaviour
     public AnimationCurve[] curve;
 
     private SetActive setActiveScript;
+    [SerializeField] private ParticleSystem particleEffect;
     
 
     private void Awake()
@@ -30,6 +32,8 @@ public class InstantiateObject : MonoBehaviour
                 
                 SetActiveField(targetPosition.position, 0.2f);
                 Destroy(gameObject);
+                Instantiate(GameAssets.i.effect, transform.position, quaternion.identity);
+                particleEffect.Play();
             });
         });
 

@@ -26,6 +26,7 @@ public class SetActive : MonoBehaviour
    [SerializeField] private TextMeshProUGUI percent;
    [SerializeField] private TextMeshProUGUI tryAgainText;
    [SerializeField] private Animator anim;
+   
     private SceneManagement sceneManagement;
     private bool otherScene;
 
