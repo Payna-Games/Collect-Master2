@@ -48,14 +48,7 @@ public class GameManager : MonoBehaviour
         
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         sceneManagement = GetComponent<SceneManagement>();
-      
-        if (!gameData.tryAgain)
-        {
-            gameData.i = 0;
-            gameData.t = 0;
-            gameData.h = 0;
-            
-        }
+
         if (gameData.i <3)
         {
             incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
@@ -89,7 +82,7 @@ public class GameManager : MonoBehaviour
             timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
         }
 
-        if (gameData.scene > 0)
+        if (gameData.scene > 0 )
         {
             holeSize.transform.localScale = gameData.holeScale;
         }
@@ -142,9 +135,10 @@ public class GameManager : MonoBehaviour
         gameData.t++;
         
         gameData.timeDuration += 5;
+        CountdownTimer.time += 5;
         gameData.timeLevel++;
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
-       //" PlayerPrefs.SetInt("TimeDuration" ,gameData.timeDuration);
+       
 
        if (gameData.t<5)
        {
@@ -162,8 +156,8 @@ public class GameManager : MonoBehaviour
     }
     public void IncomeButton()
     {
-        gameData. i++;
-        destroyTrigger.increaseCoin++;
+        gameData.i++;
+        gameData.increaseCoin++;
         gameData.IncomeLevel++;
         IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
         if (gameData.i<3)
@@ -198,7 +192,7 @@ public class GameManager : MonoBehaviour
 
     public void Coin()
     {
-        gameData.coin += destroyTrigger.increaseCoin;
+        gameData.coin += gameData.increaseCoin;
         coinText.text = gameData.coin.ToString();
     }
     

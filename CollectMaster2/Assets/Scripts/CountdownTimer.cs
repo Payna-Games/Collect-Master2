@@ -10,7 +10,7 @@ public class CountdownTimer : MonoBehaviour
     public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI timeUpText;
     [SerializeField] private Image timeImage;
-    public static int timeDuration;
+    
 
     private Animator timeImageAnimator;
     [SerializeField] private Animator timeUpAnim;
@@ -21,13 +21,15 @@ public class CountdownTimer : MonoBehaviour
     public bool isCountingDown;
     private GameObject joyStick;
     [SerializeField] private PlayerController playerController;
+    public static int time = 5;
     
 
     private void Start()
     {
+        gameData.timeDuration = time;
         gameManager = GetComponent<GameManager>();
-        
-        countdownText.text = "00:" + timeDuration.ToString();
+
+        countdownText.text = "00:" + gameData.timeDuration.ToString();
         UpdateUI();
         timeImageAnimator = GameObject.Find("TimeImage").GetComponent<Animator>();
         joyStick = GameObject.Find("JoystickCanvas");
@@ -38,7 +40,7 @@ public class CountdownTimer : MonoBehaviour
 
     public void CountDown()
     {
-        countdownText.text = "00:" +timeDuration.ToString();
+        countdownText.text = "00:" + gameData.timeDuration.ToString();
     }
     public void StartCountdown()
     {
@@ -48,18 +50,18 @@ public class CountdownTimer : MonoBehaviour
     private void UpdateCountdown()
     {
         
-        if (timeDuration > 0)
+        if (gameData.timeDuration > 0)
         {
-            timeDuration -= 1; 
+            gameData.timeDuration -= 1; 
             UpdateUI();
 
-            if (timeDuration == 5)
+            if (gameData.timeDuration == 5)
             {
                 timeImageAnimator.Play("TimeHurryUp");
                 timeImage.color = new Color(1f, 0, 0, 1);
                 
             }
-            if (timeDuration == 0)
+            if (gameData.timeDuration == 0)
             {
                 timeImageAnimator.enabled = false;
                 timeUpAnim.Play("TimeUpAnimation");
@@ -75,14 +77,10 @@ public class CountdownTimer : MonoBehaviour
     private void UpdateUI()
     {
 
-       
-            countdownText.text = "00:" +timeDuration.ToString();
-        
-        
+        countdownText.text = "00:" + gameData.timeDuration.ToString();
+
+
     }
 
-    private void Update()
-    {
-       
-    }
+    
 }

@@ -11,6 +11,7 @@ public class SceneManagement : MonoBehaviour
     private GameManager2 gameManager2Script;
     private GameObject gameManager2Object;
     
+    
     public GameData gameData;
     private int currentSceneIndex;
     
@@ -27,23 +28,16 @@ public class SceneManagement : MonoBehaviour
         if (currentSceneIndex == 0 )
         {
             
-            //
-            // if (!PlayerPrefs.HasKey("TimeDuration"))
-            // {
-            //     LoadGameData();
-            // }
-            // else if (PlayerPrefs.HasKey("TimeDuration"))
-            // {
-            //    GetGameData();
-            // }
-
+         
             if (gameData.scene == 0)
             {
                 LoadGameData();
-               // gameData.timeDuration = 5;
-            }
+               CountdownTimer.time = 5;
+               gameData.timeDuration = 5;
 
-            CountdownTimer.timeDuration = gameData.timeDuration;
+            }
+            
+            
             gameData.collectedObjects.Clear();
             
         }
@@ -94,7 +88,7 @@ public class SceneManagement : MonoBehaviour
     
     void Update()
     {
-        if (CountdownTimer.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit )
+        if ( gameData.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit )
         {
             StartCoroutine(WaitForSeconds());
         }
@@ -120,7 +114,12 @@ public class SceneManagement : MonoBehaviour
             gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
             gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
             gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);
-        
+            gameData.increaseCoin = PlayerPrefs.GetInt("IncreaseCoin", 0);
+            gameData.timeDuration = PlayerPrefs.GetInt("timeDuration", 5);
+            gameData.h=PlayerPrefs.GetInt("h", 0);
+            gameData.t=PlayerPrefs.GetInt("t", 0);
+            gameData.i=PlayerPrefs.GetInt("i", 0);
+            
     }
 
     // private void SetGameData()

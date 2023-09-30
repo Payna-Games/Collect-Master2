@@ -22,6 +22,7 @@ public class GameData :  ScriptableObject
      public int holeSizeCoin;
      public int timeCoin;
      public int incomeCoin;
+     public int increaseCoin;
      public bool tryAgain = false;
      public Vector3 holeScale;
 

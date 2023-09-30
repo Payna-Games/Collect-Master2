@@ -2564,7 +2564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37599853, y: 1e-45, z: -1e-45, w: 0.9266203}
+  m_LocalRotation: {x: 0.37599853, y: -3e-45, z: 1e-45, w: 0.9266203}
   m_LocalPosition: {x: -12.28, y: 4.85, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4580,6 +4580,7 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
   isCountingDown: 0
   playerController: {fileID: 802233980}
+  time: 5
 --- !u!114 &605951605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4592,6 +4593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e855a7e3e1a6b04db6a7d3f9190f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 605951604}
   gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
   destroyTrigger: {fileID: 1229649603}
 --- !u!1001 &629514019
@@ -5808,7 +5810,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -7000,7 +7002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880181908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44088188, y: -1e-45, z: 1e-45, w: 0.8975651}
+  m_LocalRotation: {x: 0.44088188, y: -1e-45, z: 1e-45, w: 0.8975652}
   m_LocalPosition: {x: -12.28, y: 5.23, z: 2.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7489,7 +7491,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -9272,7 +9274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132013773}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37599853, y: 1e-45, z: -1e-45, w: 0.9266203}
+  m_LocalRotation: {x: 0.37599853, y: -3e-45, z: 1e-45, w: 0.9266203}
   m_LocalPosition: {x: -12.28, y: 4.85, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10096,7 +10098,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}

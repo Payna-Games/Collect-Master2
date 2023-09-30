@@ -13,23 +13,48 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 20
+  timeDuration: 5
   holeSize: 0
   income: 0
-  coin: 76
-  collectedObjects: []
+  coin: 48
+  collectedObjects:
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
   incomePreis: f4010000e8030000d0070000d0070000
   holePreis: 32000000c80000002c0100005802000084030000b0040000b0040000
   timePreis: 1900000064000000c8000000f40100005802000084030000b0040000b0040000
-  holeSizeLevel: 4
-  timeLevel: 0
-  IncomeLevel: 0
-  scene: 1
+  holeSizeLevel: 0
+  timeLevel: 1
+  IncomeLevel: 1
+  scene: 0
   holeSizeCoin: 0
   timeCoin: 0
   incomeCoin: 0
+  increaseCoin: 1
   tryAgain: 1
-  holeScale: {x: 3.2249787, y: 4.224979, z: 3.2249787}
+  holeScale: {x: 1.5, y: 2.5, z: 1.5}
   i: 0
-  h: 4
+  h: 0
   t: 0
