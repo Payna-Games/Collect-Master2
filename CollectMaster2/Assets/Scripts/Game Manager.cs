@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button timeButton;
      private SceneManagement sceneManagement; 
     public  bool holeSizeStop = false;
+    private Color textColor;
 
     
 
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         else if (gameData.i >= 3)
         {
             incomeCoinText.text = "Max";
+           
             incomeButton.interactable = false;
             incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
         }
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
         else if (gameData.h >= 5)
         {
             holeCoinText.text= "Max";
+            holeCoinText.color = new Color(0, 0, 0, 0.7f);
             holeButton.interactable = false;
             holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
             holeSizeStop = true;
@@ -78,8 +81,10 @@ public class GameManager : MonoBehaviour
         else if (gameData.t >= 5)
         {
             timeCoinText.text = "Max";
+            timeCoinText.color = new Color(0, 0, 0, 0.7f);
             timeButton.interactable = false;
             timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+           
         }
 
         if (gameData.scene > 0 )
@@ -122,6 +127,8 @@ public class GameManager : MonoBehaviour
         else if (gameData.h >= 5)
         {
             holeCoinText.text = "Max";
+            holeCoinText.alpha= 0.7f;
+            holeLevelText.alpha = 0.7f;
             holeButton.interactable = false;
             holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
             holeSizeStop = true;
@@ -147,6 +154,8 @@ public class GameManager : MonoBehaviour
        else if (gameData.t >= 5)
        {
            timeCoinText.text = "Max";
+           timeCoinText.alpha= 0.7f;
+           timeLevelText.alpha = 0.7f;
            timeButton.interactable = false;
            timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
@@ -167,6 +176,8 @@ public class GameManager : MonoBehaviour
         else if (gameData.i >= 3)
         {
             incomeCoinText.text = "Max";
+            incomeCoinText.alpha= 0.7f;
+            IncomeLevelText.alpha = 0.7f;
             incomeButton.interactable = false;
             incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
