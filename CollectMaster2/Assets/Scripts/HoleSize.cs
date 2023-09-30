@@ -31,6 +31,7 @@ public class HoleSize : MonoBehaviour
     private bool increase = false;
     private bool hasIncreased = false;
 
+    [SerializeField] private GameManager gameManager;
     private void Start()
     {
 
@@ -54,7 +55,7 @@ public class HoleSize : MonoBehaviour
         circleRatio += scaleValue / scaleIncraseThreshold;
         
         
-        if (scaleValue2 >= scaleIncraseThreshold)
+        if (scaleValue2 >= scaleIncraseThreshold && !gameManager.holeSizeStop)
         {
             increase = true;
             hasIncreased = false;
@@ -73,9 +74,14 @@ public class HoleSize : MonoBehaviour
 
     private void Update()
     {
-        circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
+        if (!gameManager.holeSizeStop)
+        {
+            circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
+        }
 
-       if (increase && !hasIncreased)
+        
+
+       if (increase && !hasIncreased && !gameManager.holeSizeStop)
        {
            transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
            holeSizee = transform.localScale;

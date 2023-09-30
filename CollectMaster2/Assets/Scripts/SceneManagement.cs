@@ -13,6 +13,7 @@ public class SceneManagement : MonoBehaviour
     
     public GameData gameData;
     private int currentSceneIndex;
+    
    
 
     [SerializeField] private DestroyTrigger destroyTrigger;
@@ -25,6 +26,7 @@ public class SceneManagement : MonoBehaviour
         
         if (currentSceneIndex == 0 )
         {
+            gameData.tryAgain = false;
             //
             // if (!PlayerPrefs.HasKey("TimeDuration"))
             // {
@@ -86,7 +88,8 @@ public class SceneManagement : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex-1);
-        
+        gameData.tryAgain = true;
+
     }
     
     void Update()
