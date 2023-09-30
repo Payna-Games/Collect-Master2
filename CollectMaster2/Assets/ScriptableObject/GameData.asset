@@ -16,19 +16,20 @@ MonoBehaviour:
   timeDuration: 5
   holeSize: 0
   income: 0
-  coin: 80
+  coin: 78
   collectedObjects: []
   incomePreis: f4010000e8030000d0070000d0070000
   holePreis: 32000000c80000002c0100005802000084030000b0040000b0040000
   timePreis: 1900000064000000c8000000f40100005802000084030000b0040000b0040000
   holeSizeLevel: 5
   timeLevel: 0
-  IncomeLevel: 3
+  IncomeLevel: 0
   scene: 2
   holeSizeCoin: 0
   timeCoin: 0
   incomeCoin: 0
   tryAgain: 1
-  i: 3
+  holeScale: {x: 3.5, y: 4.5, z: 3.5}
+  i: 0
   h: 5
   t: 0

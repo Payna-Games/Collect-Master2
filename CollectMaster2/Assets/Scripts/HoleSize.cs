@@ -84,8 +84,8 @@ public class HoleSize : MonoBehaviour
        if (increase && !hasIncreased && !gameManager.holeSizeStop)
        {
            transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
-           Debug.Log("Vector" + transform.localScale);
-           gameData.holeScale = transform.localScale;
+        
+          
 
 
        }
@@ -98,6 +98,7 @@ public class HoleSize : MonoBehaviour
                
            }
            hasIncreased = true;
+           gameData.holeScale = transform.localScale;
        }
 
        

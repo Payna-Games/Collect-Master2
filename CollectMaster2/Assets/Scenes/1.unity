@@ -2514,7 +2514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37599853, y: -3e-45, z: 1e-45, w: 0.9266203}
+  m_LocalRotation: {x: 0.37599853, y: 1e-45, z: -1e-45, w: 0.9266203}
   m_LocalPosition: {x: -12.28, y: 4.85, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2780,7 +2780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389798781}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44088188, y: 1e-45, z: -1e-45, w: 0.8975651}
+  m_LocalRotation: {x: 0.44088188, y: 1e-45, z: -1e-45, w: 0.8975652}
   m_LocalPosition: {x: -12.28, y: 5.23, z: 2.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4522,9 +4522,6 @@ MonoBehaviour:
   holeCoinText: {fileID: 248151646}
   IncomeLevelText: {fileID: 1676155135}
   incomeCoinText: {fileID: 803649216}
-  incomePreis: f4010000e8030000d0070000
-  holePreis: 32000000c80000002c01000058020000
-  timePreis: 1900000064000000f401000084030000b0040000
   incomeButton: {fileID: 940731361}
   holeButton: {fileID: 632135883}
   timeButton: {fileID: 1330021101}
@@ -7434,7 +7431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880181908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44088188, y: -1e-45, z: 1e-45, w: 0.8975651}
+  m_LocalRotation: {x: 0.44088188, y: -1e-45, z: 1e-45, w: 0.8975652}
   m_LocalPosition: {x: -12.28, y: 5.23, z: 2.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9710,7 +9707,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132013773}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37599853, y: -3e-45, z: 1e-45, w: 0.9266203}
+  m_LocalRotation: {x: 0.37599853, y: 1e-45, z: -1e-45, w: 0.9266203}
   m_LocalPosition: {x: -12.28, y: 4.85, z: 2.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14866,9 +14863,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 448903921458032867, guid: 66498c4828b809246be3cee901685e94,
         type: 3}
+      propertyPath: gameData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281,
+        type: 2}
+    - target: {fileID: 448903921458032867, guid: 66498c4828b809246be3cee901685e94,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 605951602}
+    - target: {fileID: 2312162296282631910, guid: 66498c4828b809246be3cee901685e94,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2312162296282631910, guid: 66498c4828b809246be3cee901685e94,
         type: 3}
       propertyPath: m_LocalPosition.x
