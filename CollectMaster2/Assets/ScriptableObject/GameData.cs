@@ -22,7 +22,7 @@ public class GameData :  ScriptableObject
      public int holeSizeCoin;
      public int timeCoin;
      public int incomeCoin;
-     public bool tryAgain;
+     public bool tryAgain = false;
 
      public int i;
      public int h;

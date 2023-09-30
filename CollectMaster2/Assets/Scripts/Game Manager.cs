@@ -54,12 +54,42 @@ public class GameManager : MonoBehaviour
             gameData.i = 0;
             gameData.t = 0;
             gameData.h = 0;
+            
         }
-        incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
-       timeCoinText.text = gameData.timePreis[gameData.t].ToString();
-       holeCoinText.text = gameData.holePreis[gameData.h].ToString();
-       
-       
+        if (gameData.i <3)
+        {
+            incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
+        }
+        else if (gameData.i >= 3)
+        {
+            incomeCoinText.text = "Max";
+            incomeButton.interactable = false;
+            incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+        }
+        if (gameData.h <5)
+        {
+            holeCoinText.text = gameData.holePreis[gameData.h].ToString();
+        }
+        else if (gameData.h >= 5)
+        {
+            holeCoinText.text= "Max";
+            holeButton.interactable = false;
+            holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            holeSizeStop = true;
+        }
+        if (gameData.t <5)
+        {
+            timeCoinText.text = gameData.timePreis[gameData.t].ToString();
+        }
+        else if (gameData.t >= 5)
+        {
+            timeCoinText.text = "Max";
+            timeButton.interactable = false;
+            timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+        }
+
+        
+        
 
     }
 

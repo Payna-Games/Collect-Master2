@@ -26,7 +26,7 @@ public class SceneManagement : MonoBehaviour
         
         if (currentSceneIndex == 0 )
         {
-            gameData.tryAgain = false;
+            
             //
             // if (!PlayerPrefs.HasKey("TimeDuration"))
             // {
