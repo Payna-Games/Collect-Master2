@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
             holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
             holeSizeStop = true;
         }
+        
         if (gameData.t <5)
         {
             timeCoinText.text = gameData.timePreis[gameData.t].ToString();
@@ -88,6 +89,10 @@ public class GameManager : MonoBehaviour
             timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
         }
 
+        if (gameData.scene > 0)
+        {
+            holeSize.transform.localScale = gameData.holeScale;
+        }
         
         
 
