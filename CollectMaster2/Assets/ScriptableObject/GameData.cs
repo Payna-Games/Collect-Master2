@@ -25,6 +25,7 @@ public class GameData :  ScriptableObject
      public int increaseCoin;
      public bool tryAgain = false;
      public Vector3 holeScale;
+     public int cameraIndex = 0;
 
      public int i;
      public int h;

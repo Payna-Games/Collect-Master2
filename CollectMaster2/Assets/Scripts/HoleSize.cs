@@ -37,7 +37,7 @@ public class HoleSize : MonoBehaviour
 
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         gameData.holeScale = transform.localScale;
-        
+        cameraindex = gameData.cameraIndex;
     }
 
   
@@ -59,6 +59,7 @@ public class HoleSize : MonoBehaviour
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
             circle.fillAmount = 0;
             circleRatio = 0;
+            
 
             Debug.Log(cameraindex);
 

@@ -32,8 +32,8 @@ public class SceneManagement : MonoBehaviour
             if (gameData.scene == 0)
             {
                 LoadGameData();
-               CountdownTimer.time = 5;
-               gameData.timeDuration = 5;
+               CountdownTimer.time = 500;
+               gameData.timeDuration = 500;
 
             }
             

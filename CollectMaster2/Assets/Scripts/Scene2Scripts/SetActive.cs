@@ -76,11 +76,8 @@ public class SetActive : MonoBehaviour
         
          if (imageRatio < 1)
          {
-            StartCoroutine(NextSceneTimer(4));
-            otherScene = true;
-            tryAgainText.text = "Try Again!";
-            anim.Play("TimeUpAnimation");
-            StartCoroutine(NextSceneTimer(2));
+            
+            StartCoroutine(NextSceneTimer());
          }
         
          if (imageRatio == 1) 
@@ -118,15 +115,20 @@ public class SetActive : MonoBehaviour
       }
    }
 
-   private IEnumerator NextSceneTimer(int time)
+   private IEnumerator NextSceneTimer()
    {
-      yield return new WaitForSeconds(time);
+      yield return new WaitForSeconds(3); // İlk bekleme süresi
+      tryAgainText.text = "Try Again!";
+      anim.Play("TimeUpAnimation");
+     
+      otherScene = true;
+
+      yield return new WaitForSeconds(2); // İkinci bekleme süresi
 
       if (otherScene)
       {
          sceneManagement.TryAgainScene();
          gameData.scene++;
-
       }
 
       

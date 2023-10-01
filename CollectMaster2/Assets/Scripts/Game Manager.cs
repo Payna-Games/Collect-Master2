@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
      private SceneManagement sceneManagement; 
     public  bool holeSizeStop = false;
     private Color textColor;
-
+    private int cameraButtonIndex;
     
 
 
@@ -46,9 +46,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        cameraButtonIndex = 0;
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         sceneManagement = GetComponent<SceneManagement>();
+        
 
         if (gameData.i <3)
         {
@@ -57,6 +58,8 @@ public class GameManager : MonoBehaviour
         else if (gameData.i >= 3)
         {
             incomeCoinText.text = "Max";
+            incomeCoinText.alpha= 0.7f;
+            IncomeLevelText.alpha = 0.7f;
            
             incomeButton.interactable = false;
             incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
@@ -68,6 +71,8 @@ public class GameManager : MonoBehaviour
         else if (gameData.h >= 5)
         {
             holeCoinText.text= "Max";
+            holeCoinText.alpha= 0.7f;
+            holeLevelText.alpha = 0.7f;
             holeCoinText.color = new Color(0, 0, 0, 0.7f);
             holeButton.interactable = false;
             holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
@@ -77,11 +82,15 @@ public class GameManager : MonoBehaviour
         if (gameData.t <5)
         {
             timeCoinText.text = gameData.timePreis[gameData.t].ToString();
+            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
         }
         else if (gameData.t >= 5)
         {
             timeCoinText.text = "Max";
+            timeCoinText.alpha= 0.7f;
+            timeLevelText.alpha = 0.7f;
             timeCoinText.color = new Color(0, 0, 0, 0.7f);
+            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
             timeButton.interactable = false;
             timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
            
@@ -111,12 +120,18 @@ public class GameManager : MonoBehaviour
     public void HoleSizeButton()
     {
         gameData.h++;
+        cameraButtonIndex++;
+        gameData.cameraIndex = cameraButtonIndex;
         if (!holeSizeStop)
+        {
             hole.transform.localScale += holeSize.scaleStep * Vector3.one;
             gameData.holeSizeLevel++;
             holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
-            cameraSwitcher.SwitchCamera(holeSize.cameraindex);
-            holeSize.cameraindex++;
+            cameraSwitcher.SwitchCamera( cameraButtonIndex);
+
+            
+        }
+           
         
         
         
