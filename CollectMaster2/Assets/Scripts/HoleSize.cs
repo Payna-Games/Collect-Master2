@@ -53,15 +53,15 @@ public class HoleSize : MonoBehaviour
         {
             increase = true;
             hasIncreased = false;
+            gameData.cameraIndex++;
+            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
             
-            cameraSwitcher.SwitchCamera(cameraindex);
-            cameraindex++;
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
             circle.fillAmount = 0;
             circleRatio = 0;
             
 
-            Debug.Log(cameraindex);
+            
 
         }
         
