@@ -14,7 +14,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator LoadAsycn()
     {
-        AsyncOperation Op = SceneManager.LoadSceneAsync(1/*<= Hangi levelse yaz*/);
+        AsyncOperation Op = SceneManager.LoadSceneAsync(1);
         while (!Op.isDone)
         {
             float progress = Mathf.Clamp01(Op.progress / .9f);
