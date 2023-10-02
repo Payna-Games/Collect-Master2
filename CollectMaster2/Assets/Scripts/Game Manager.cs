@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public  bool holeSizeStop = false;
     private Color textColor;
     private int cameraButtonIndex;
+    private bool tutorial;
     
 
 
@@ -46,6 +47,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (PlayerPrefs.GetInt("tutorial", 1) == 1)
+        {
+            
+            tutorial = true;
+
+            PlayerPrefs.SetInt("tutorial", 0);
+        }
+        else
+        {
+            tutorial = false;
+        }
         cameraButtonIndex = 0;
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         sceneManagement = GetComponent<SceneManagement>();
@@ -119,86 +131,106 @@ public class GameManager : MonoBehaviour
 
     public void HoleSizeButton()
     {
-        gameData.h++;
-        cameraButtonIndex++;
-        gameData.cameraIndex = cameraButtonIndex;
-        if (!holeSizeStop)
+        if (tutorial)
         {
-            hole.transform.localScale += holeSize.scaleStep * Vector3.one;
-            gameData.holeSizeLevel++;
-            holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
-            cameraSwitcher.SwitchCamera( cameraButtonIndex);
+            hole.transform.localScale = new Vector3(1, 1, 1);
+            timeButton.interactable = true;
+            incomeButton.interactable = true;
+            tutorial = false;
+        }
+        else if(!tutorial)
+        {
+            gameData.h++;
+            cameraButtonIndex++;
+            gameData.cameraIndex = cameraButtonIndex;
+            if (!holeSizeStop)
+            {
+                hole.transform.localScale += holeSize.scaleStep * Vector3.one;
+                gameData.holeSizeLevel++;
+                holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
+                cameraSwitcher.SwitchCamera( cameraButtonIndex);
 
             
-        }
+            }
            
         
         
         
-        if (gameData.h<5)
-        {
-            holeCoinText.text = gameData.holePreis[gameData.h].ToString();
+            if (gameData.h<5)
+            {
+                holeCoinText.text = gameData.holePreis[gameData.h].ToString();
+            }
+            else if (gameData.h >= 5)
+            {
+                holeCoinText.text = "Max";
+                holeCoinText.alpha= 0.7f;
+                holeLevelText.alpha = 0.7f;
+                holeButton.interactable = false;
+                holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+                holeSizeStop = true;
+            } 
         }
-        else if (gameData.h >= 5)
-        {
-            holeCoinText.text = "Max";
-            holeCoinText.alpha= 0.7f;
-            holeLevelText.alpha = 0.7f;
-            holeButton.interactable = false;
-            holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
-            holeSizeStop = true;
-        }
-
+                
+        
+       
        
 
     }
     public void TimeButton()
     {
-        gameData.t++;
+        if (!tutorial)
+        {
+            gameData.t++;
         
-        gameData.timeDuration += 5;
-        CountdownTimer.time += 5;
-        gameData.timeLevel++;
-        timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
+            gameData.timeDuration += 5;
+            CountdownTimer.time += 5;
+            gameData.timeLevel++;
+            timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
        
 
-       if (gameData.t<5)
-       {
-           timeCoinText.text = gameData.timePreis[gameData.t].ToString();
-       }
-       else if (gameData.t >= 5)
-       {
-           timeCoinText.text = "Max";
-           timeCoinText.alpha= 0.7f;
-           timeLevelText.alpha = 0.7f;
-           timeButton.interactable = false;
-           timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            if (gameData.t<5)
+            {
+                timeCoinText.text = gameData.timePreis[gameData.t].ToString();
+            }
+            else if (gameData.t >= 5)
+            {
+                timeCoinText.text = "Max";
+                timeCoinText.alpha= 0.7f;
+                timeLevelText.alpha = 0.7f;
+                timeButton.interactable = false;
+                timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
-       }
+            } 
+        }
+        
 
        
     }
     public void IncomeButton()
     {
-        gameData.i++;
-        gameData.increaseCoin++;
-        gameData.IncomeLevel++;
-        IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
-        if (gameData.i<3)
+        if (!tutorial)
         {
-            incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
-        }
-        else if (gameData.i >= 3)
-        {
-            incomeCoinText.text = "Max";
-            incomeCoinText.alpha= 0.7f;
-            IncomeLevelText.alpha = 0.7f;
-            incomeButton.interactable = false;
-            incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            gameData.i++;
+            gameData.increaseCoin++;
+            gameData.IncomeLevel++;
+            IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
+            if (gameData.i<3)
+            {
+                incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
+            }
+            else if (gameData.i >= 3)
+            {
+                incomeCoinText.text = "Max";
+                incomeCoinText.alpha= 0.7f;
+                IncomeLevelText.alpha = 0.7f;
+                incomeButton.interactable = false;
+                incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+
+            }
+
 
         }
         
-       
 
 
 
