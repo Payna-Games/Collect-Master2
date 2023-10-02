@@ -11,6 +11,9 @@ public class GameManager2 : MonoBehaviour
    [SerializeField] private int imageFillSpeed;
    private int objCountLimit;
    private SetActive setActive;
+  
+   
+   
    
 
 
@@ -18,16 +21,19 @@ public class GameManager2 : MonoBehaviour
    {
       fillImage.fillAmount = 0;
       setActive = GetComponent<SetActive>();
-     
+      
+      
+
    }
+
+   
 
    private void Update()
    {
       
          
          fillImage.fillAmount = Mathf.Lerp(fillImage.fillAmount, setActive.imageRatio , Time.deltaTime * imageFillSpeed);
-         Debug.Log("imageRatio" + setActive.imageRatio);
-         Debug.Log( " Count "+ gameData.collectedObjects.Count );
+         
          
       
       

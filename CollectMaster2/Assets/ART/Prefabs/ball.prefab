@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7140104769982416013}
   - component: {fileID: 8140162376638317712}
   - component: {fileID: 3084036681555240498}
-  - component: {fileID: 6234910202624079588}
+  - component: {fileID: 3696884796209726088}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40000004, y: 0.4, z: 0.40000004}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c93b8a8b11685841be48f7c7a68497b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0.4
+  size: 1
   objName: ball
-  coin: 2
+  coin: 6
 --- !u!54 &3084036681555240498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,8 +129,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6234910202624079588
-SphereCollider:
+--- !u!136 &3696884796209726088
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -147,6 +147,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.06
-  m_Center: {x: -3.3124917e-15, y: 0.93238354, z: -3.6230377e-15}
+  serializedVersion: 2
+  m_Radius: 0.71
+  m_Height: 3.39
+  m_Direction: 2
+  m_Center: {x: -3.3124917e-15, y: 0.9323835, z: -3.5195225e-15}
