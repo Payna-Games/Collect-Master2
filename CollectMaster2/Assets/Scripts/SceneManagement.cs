@@ -25,15 +25,17 @@ public class SceneManagement : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         
         
-        if (currentSceneIndex == 0 )
+        
+        
+        if (currentSceneIndex == 1 )
         {
             
          
             if (gameData.scene == 0)
             {
                 LoadGameData();
-               CountdownTimer.time = 500;
-               gameData.timeDuration = 500;
+               CountdownTimer.time = 15;
+               gameData.timeDuration = 15;
 
             }
             

@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     private Color textColor;
     private int cameraButtonIndex;
     private bool tutorial;
+    [SerializeField] private FloatingJoystick floatingJoystick;
+    [SerializeField] private Animator animator;
     
 
 
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
         else
         {
             tutorial = false;
+            animator.gameObject.SetActive(false);
         }
         cameraButtonIndex = 0;
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
@@ -127,6 +130,12 @@ public class GameManager : MonoBehaviour
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
         IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
         coinText.text = gameData.coin.ToString();
+        if(tutorial)
+        {
+            floatingJoystick.gameObject.SetActive(false);
+        }
+
+
     }
 
     public void HoleSizeButton()
@@ -137,6 +146,8 @@ public class GameManager : MonoBehaviour
             timeButton.interactable = true;
             incomeButton.interactable = true;
             tutorial = false;
+            animator.SetTrigger("slide");
+            floatingJoystick.gameObject.SetActive(true);
         }
         else if(!tutorial)
         {
@@ -238,9 +249,10 @@ public class GameManager : MonoBehaviour
 
     public void ScreenButton()
     {
-        if (!countdownTimer.isCountingDown)
+        if (!tutorial && !countdownTimer.isCountingDown)
         {
             gameOver = false;
+            animator.gameObject.SetActive(false);
             countdownTimer.isCountingDown = true;
             countdownTimer.StartCountdown();
             
