@@ -23,7 +23,7 @@ public class InstantiateObject : MonoBehaviour
 
     private void Start()
     {
-        transform.DOLocalMoveY(targetPosition.localPosition.y + 0.3f, duration / 4f).SetEase(curve[0]).OnComplete(() =>
+        transform.DOLocalMoveY(targetPosition.localPosition.y + 0.05f, duration / 4f).SetEase(curve[0]).OnComplete(() =>
         {
             transform.DOMove(targetPosition.position, duration/2f).SetEase(curve[1]).OnComplete(() =>
             {

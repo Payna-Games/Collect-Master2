@@ -17,15 +17,17 @@ public class SetActive : MonoBehaviour
    public int randomCubePosition;
    List<int> usedIndicesGameObject = new List<int>();
    List<int> usedIndicesCube = new List<int>();
-   public float imageRatio;
-   private int objectCount;
+   public int objectCount;
    bool allObjectsAreDeleted = true;
    private string IndexToChange = "deleted";
    public Transform[] transforms;
    
-   [SerializeField] private TextMeshProUGUI percent;
+   
    [SerializeField] private TextMeshProUGUI tryAgainText;
    [SerializeField] private Animator anim;
+   [SerializeField] private GameObject holeToFill;
+   private GameManager2 gameManager2;
+   public int collectedObjectCount;
    
     private SceneManagement sceneManagement;
     private bool otherScene;
@@ -33,9 +35,11 @@ public class SetActive : MonoBehaviour
 
    private void Start()
    {
-      imageRatio = 0;
+      
       objectCount = gameData.collectedObjects.Count;
       sceneManagement = GetComponent<SceneManagement>();
+      gameManager2 = GetComponent<GameManager2>();
+      collectedObjectCount = 0;
    }
 
 
@@ -64,9 +68,11 @@ public class SetActive : MonoBehaviour
          
          var gameObject = Instantiate(Resources.Load(randomObject), holeTransform.transform.position, Quaternion.identity);
          gameData.collectedObjects[randomIndex] = IndexToChange;
+         collectedObjectCount++;
          objectCount--;
-         imageRatio += 0.01f;
-         percent.text = (imageRatio*100).ToString("F0") + "%";
+         
+         
+        
          allObjectsAreDeleted = true;
       }
 
@@ -74,13 +80,13 @@ public class SetActive : MonoBehaviour
       {
          otherScene = false;
         
-         if (imageRatio < 1)
+         if (gameManager2.fillAmount < 1)
          {
             
             StartCoroutine(NextSceneTimer());
          }
         
-         if (imageRatio == 1) 
+         if (gameManager2.fillAmount == 1) 
          {
             tryAgainText.text = "Well Done";
             anim.Play("TimeUpAnimation");
@@ -129,6 +135,7 @@ public class SetActive : MonoBehaviour
       {
          sceneManagement.TryAgainScene();
          gameData.scene++;
+         holeToFill.SetActive((false));
       }
 
       
