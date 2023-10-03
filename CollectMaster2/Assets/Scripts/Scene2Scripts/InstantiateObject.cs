@@ -47,8 +47,7 @@ public class InstantiateObject : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             hitCollider.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            Debug.Log("metot çalışıyor");
-            
+          
         }
        
            

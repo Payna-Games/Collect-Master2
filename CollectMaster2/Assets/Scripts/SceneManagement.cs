@@ -18,7 +18,7 @@ public class SceneManagement : MonoBehaviour
    
 
     [SerializeField] private DestroyTrigger destroyTrigger;
-    //private CountdownTimer timer;
+    
     
     private void Awake()
     {
@@ -115,7 +115,7 @@ public class SceneManagement : MonoBehaviour
         
         
             
-            //PlayerPrefs.SetInt("TimeDuration" ,5);
+            
             gameData.coin = PlayerPrefs.GetInt("Coin", 0);
             gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
             gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
@@ -128,28 +128,7 @@ public class SceneManagement : MonoBehaviour
             
     }
 
-    // private void SetGameData()
-    // {
-    //     PlayerPrefs.SetInt("Coin" ,gameData.coin);
-    //     PlayerPrefs.SetInt("HoleSizeLevel" ,gameData.holeSizeLevel);
-    //     PlayerPrefs.SetInt("TimeLevel" ,gameData.timeLevel);
-    //     PlayerPrefs.SetInt("IncomeLevel" , gameData.IncomeLevel);
-    //     
-    // }
-    //
-    // private void OnDisable()
-    // {
-    //     SetGameData();
-    // }
-    //
-    // private void GetGameData()
-    // {
-    //     gameData.timeDuration = PlayerPrefs.GetInt("TimeDuration");
-    //     gameData.coin = PlayerPrefs.GetInt("Coin");
-    //     gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel" );
-    //     gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel" );
-    //     gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel" );
-    // }
+  
 }
     
     

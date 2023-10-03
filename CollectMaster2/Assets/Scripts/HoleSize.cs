@@ -72,29 +72,33 @@ public class HoleSize : MonoBehaviour
         if (!gameManager.holeSizeStop)
         {
             circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
-        }
+       
 
         
 
-       if (increase && !hasIncreased && !gameManager.holeSizeStop)
-       {
-           transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
+            if (increase && !hasIncreased)
+            {
+                transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
         
           
 
 
-       }
-       if (transform.localScale.x >= targetSize[ currentSizeIndex].x && transform.localScale.y >= targetSize[ currentSizeIndex].y && transform.localScale.z >= targetSize[ currentSizeIndex].z)
-       {
+            }
+            if (transform.localScale.x >= targetSize[ currentSizeIndex].x && transform.localScale.y >= targetSize[ currentSizeIndex].y && transform.localScale.z >= targetSize[ currentSizeIndex].z)
+            {
            
-           if (currentSizeIndex < 3)
-           {
-               currentSizeIndex++;
+                if (currentSizeIndex < 3)
+                {
+                    currentSizeIndex++;
                
-           }
-           hasIncreased = true;
-           gameData.holeScale = transform.localScale;
-       }
+                }
+                hasIncreased = true;
+                gameData.holeScale = transform.localScale;
+            }
+        }
+        
+        
+          
 
        
     }

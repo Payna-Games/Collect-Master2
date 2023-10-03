@@ -23,7 +23,7 @@ public class TutorialAnimation : MonoBehaviour
         else
         {
             tutorial2 = false;
-          //  holdtofillanim.Stop("HoldToFill");
+          
             holdtoFill.gameObject.SetActive(false);
         }
     }
