@@ -142,9 +142,8 @@ public class GameManager : MonoBehaviour
     {
         if (tutorial)
         {
-            hole.transform.localScale = new Vector3(1, 1, 1);
-            timeButton.interactable = true;
-            incomeButton.interactable = true;
+            
+           
             tutorial = false;
             animator.SetTrigger("slide");
             floatingJoystick.gameObject.SetActive(true);

@@ -32,8 +32,23 @@ public class InstantiateObject : MonoBehaviour
                 
                 SetActiveField(targetPosition.position, 0.2f);
                 Destroy(gameObject);
-                Instantiate(GameAssets.i.effect, transform.position, quaternion.identity);
-                particleEffect.Play();
+                
+                if (setActiveScript.randomCubePosition <= 30)
+                {
+                    Instantiate(GameAssets.i.effects[3], transform.position, quaternion.identity);
+                    particleEffect.Play();
+                }
+                else if (31 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 63)
+                {
+                    Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
+                    particleEffect.Play();
+                }
+                else
+                {
+                    Instantiate(GameAssets.i.effects[2], transform.position, quaternion.identity);
+                    particleEffect.Play();
+                }
+                
             });
         });
 
