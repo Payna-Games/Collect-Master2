@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FloatingJoystick floatingJoystick;
     [SerializeField] private Canvas tutorialAnimCanvas;
     [SerializeField] private GameObject timeImage;
-    
-
+    [SerializeField] public GameObject holeParent;
+    public GameObject holeLocalScale;
 
 
 
@@ -113,12 +113,10 @@ public class GameManager : MonoBehaviour
            
         }
 
-        if (gameData.scene > 0 )
-        {
-            holeSize.transform.localScale = gameData.holeScale;
-        }
-        
-        
+        holeSize.currentSizeIndex = gameData.currentSizeIndex;
+        cameraSwitcher.SwitchCamera(gameData.currentSizeIndex);
+        Debug.Log("hole leveli = "+gameData.currentSizeIndex);
+        Debug.Log( holeSize.currentSizeIndex+1 +".kamera");
 
     }
 
@@ -132,8 +130,12 @@ public class GameManager : MonoBehaviour
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
         IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
         coinText.text = gameData.coin.ToString();
-      
 
+        
+            hole.transform.localScale = holeSize.targetSize[gameData.currentSizeIndex];
+        
+
+        
 
     }
 
@@ -146,16 +148,18 @@ public class GameManager : MonoBehaviour
             coinText.text = gameData.coin.ToString();
             
             gameData.h++;
-            cameraButtonIndex++;
-            gameData.cameraIndex = cameraButtonIndex;
-           
+            gameData.currentSizeIndex++;
+            Debug.Log("hole leveli = "+gameData.currentSizeIndex);
+            Debug.Log( gameData.currentSizeIndex+1+".kamera");
+            
+            
            
             if (!holeSizeStop)
             {
-                hole.transform.localScale += holeSize.scaleStep * Vector3.one;
+                hole.transform.localScale = holeSize.targetSize[gameData.currentSizeIndex];
                 gameData.holeSizeLevel++;
                 holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
-                cameraSwitcher.SwitchCamera( cameraButtonIndex);
+                cameraSwitcher.SwitchCamera( gameData.currentSizeIndex+1);
 
             
             }

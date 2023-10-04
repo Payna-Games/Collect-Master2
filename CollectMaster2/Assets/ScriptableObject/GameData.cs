@@ -26,6 +26,8 @@ public class GameData :  ScriptableObject
      public bool tryAgain = false;
      public Vector3 holeScale;
      public int cameraIndex = 0;
+     public int currentSizeIndex;
+     
 
      public int i;
      public int h;

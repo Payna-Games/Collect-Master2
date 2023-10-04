@@ -22,5 +22,6 @@ public class GameAssets : MonoBehaviour
     public Transform collectedCoinPrefab;
     public GameObject[] collectedObjPrefabs;
     public ParticleSystem[] effects;
+    
 
 }

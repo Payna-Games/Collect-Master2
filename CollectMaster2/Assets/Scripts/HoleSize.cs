@@ -12,13 +12,11 @@ public class HoleSize : MonoBehaviour
     [SerializeField] private float scaleSpeed;
     [SerializeField] private Image circle;
     public GameData gameData;
-    [SerializeField] private Vector3[] targetSize;
-    
-    [SerializeField] private int currentSizeIndex = 0;
-    
-    
+    public Vector3[] targetSize;
+    public int currentSizeIndex = 0;
+    public static Transform holeLocal;
     private CameraSwitcher cameraSwitcher;
-    public int cameraindex = 1;
+    
     
     //circle fill değerleri
     private float scaleValue;
@@ -34,10 +32,9 @@ public class HoleSize : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     private void Start()
     {
-
+        
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
-        gameData.holeScale = transform.localScale;
-        cameraindex = gameData.cameraIndex;
+       
     }
 
   
@@ -53,14 +50,12 @@ public class HoleSize : MonoBehaviour
         {
             increase = true;
             hasIncreased = false;
-            gameData.cameraIndex++;
-            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
+            cameraSwitcher.SwitchCamera(currentSizeIndex+1);
             
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
             circle.fillAmount = 0;
             circleRatio = 0;
-            
-
+           
             
 
         }
@@ -79,21 +74,22 @@ public class HoleSize : MonoBehaviour
             if (increase && !hasIncreased)
             {
                 transform.localScale += holeSizeSpeed * Vector3.one * Time.deltaTime;
-        
+         
           
 
 
             }
-            if (transform.localScale.x >= targetSize[ currentSizeIndex].x && transform.localScale.y >= targetSize[ currentSizeIndex].y && transform.localScale.z >= targetSize[ currentSizeIndex].z)
+            if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex < 3)
+                if (currentSizeIndex <= 4)
                 {
                     currentSizeIndex++;
-               
+                    Debug.Log( currentSizeIndex+1+".kamera");
                 }
                 hasIncreased = true;
-                gameData.holeScale = transform.localScale;
+                //gameData.holeScale = transform.localScale;
+                
             }
         }
         
