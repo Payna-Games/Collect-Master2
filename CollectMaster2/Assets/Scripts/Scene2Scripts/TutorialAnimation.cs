@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TutorialAnimation : MonoBehaviour
 {
-    private bool tutorial2;
+    //private bool tutorial2;
    public Animator holdtofillanim;
    [SerializeField] private GameObject holdtoFill;
 
@@ -13,19 +13,19 @@ public class TutorialAnimation : MonoBehaviour
 
    void Start()
     {
-        if (PlayerPrefs.GetInt("tutorial2", 1) == 1)
-        {
-            
-            tutorial2 = true;
-
-            PlayerPrefs.SetInt("tutorial", 0);
-        }
-        else
-        {
-            tutorial2 = false;
-          
-            holdtoFill.gameObject.SetActive(false);
-        }
+        // if (PlayerPrefs.GetInt("tutorial2", 1) == 1)
+        // {
+        //     
+        //     tutorial2 = true;
+        //
+        //     PlayerPrefs.SetInt("tutorial", 0);
+        // }
+        // else
+        // {
+        //     tutorial2 = false;
+        //   
+        //     holdtoFill.gameObject.SetActive(false);
+        // }
     }
 
     private void StartAnim()

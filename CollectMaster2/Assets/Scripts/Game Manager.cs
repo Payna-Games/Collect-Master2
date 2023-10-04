@@ -37,14 +37,14 @@ public class GameManager : MonoBehaviour
      private SceneManagement sceneManagement; 
     public  bool holeSizeStop = false;
     private Color textColor;
-    private int cameraButtonIndex;
+    
     private bool tutorial;
     
     [SerializeField] private FloatingJoystick floatingJoystick;
     [SerializeField] private Canvas tutorialAnimCanvas;
     [SerializeField] private GameObject timeImage;
-    [SerializeField] public GameObject holeParent;
-    public GameObject holeLocalScale;
+    
+    
 
 
 
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             tutorial = false;
             tutorialAnimCanvas.gameObject.SetActive(false);
         }
-        cameraButtonIndex = 0;
+        
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         sceneManagement = GetComponent<SceneManagement>();
         
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         if (gameData.t <5)
         {
             timeCoinText.text = gameData.timePreis[gameData.t].ToString();
-            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
+            
         }
         else if (gameData.t >= 5)
         {
@@ -107,7 +107,6 @@ public class GameManager : MonoBehaviour
             timeCoinText.alpha= 0.7f;
             timeLevelText.alpha = 0.7f;
             timeCoinText.color = new Color(0, 0, 0, 0.7f);
-            cameraSwitcher.SwitchCamera(gameData.cameraIndex);
             timeButton.interactable = false;
             timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
            
@@ -149,8 +148,6 @@ public class GameManager : MonoBehaviour
             
             gameData.h++;
             gameData.currentSizeIndex++;
-            Debug.Log("hole leveli = "+gameData.currentSizeIndex);
-            Debug.Log( gameData.currentSizeIndex+1+".kamera");
             
             
            
@@ -219,7 +216,7 @@ public class GameManager : MonoBehaviour
 
             } 
         }
-            
+       
         
         
 
@@ -251,12 +248,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
-        
-          
-
-        
-        
-
+       
 
 
     }
@@ -279,6 +271,22 @@ public class GameManager : MonoBehaviour
     {
         gameData.coin += gameData.increaseCoin;
         coinText.text = gameData.coin.ToString();
+    }
+
+    private void Update()
+    {
+         if (gameData.coin < gameData.incomePreis[gameData.i])
+        {
+            incomeButton.image.color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+        }
+         if (gameData.coin < gameData.incomePreis[gameData.t])
+        {
+            timeButton.image.color= new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+        }
+         if (gameData.coin < gameData.incomePreis[gameData.h])
+        {
+            holeButton.image.color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+        }
     }
     
    

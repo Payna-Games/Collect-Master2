@@ -38,7 +38,6 @@ public class SceneManagement : MonoBehaviour
                 LoadGameData();
                 CountdownTimer.time = 15;
                 gameData.timeDuration = 15;
-                gameData.cameraIndex = 0;
                 gameData.i = 0;
                 gameData.h = 0;
                 gameData.t = 0;
@@ -95,9 +94,8 @@ public class SceneManagement : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex - 1);
-        //holeParent.cameraindex = gameData.cameraIndex;
-        //HoleLocalScale.Instance._h = gameData.holeScale;
-        gameData.tryAgain = true;
+        
+        
 
     }
 
