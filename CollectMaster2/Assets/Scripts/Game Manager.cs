@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    public Button incomeButton;
+    [SerializeField] Button incomeButton;
     [SerializeField] private Button holeButton;
     [SerializeField] private Button timeButton;
      private SceneManagement sceneManagement; 
@@ -275,18 +275,39 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-         if (gameData.coin < gameData.incomePreis[gameData.i])
+         if (gameData.coin < gameData.incomePreis[gameData.i] && gameData.i<3 )
         {
-            incomeButton.image.color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            incomeButton.image.color = new Color32(0x5A, 0x5A, 0x5A, 0xFF);
+            
+            
         }
-         if (gameData.coin < gameData.incomePreis[gameData.t])
+         else if (gameData.coin >= gameData.incomePreis[gameData.i] && gameData.i < 3)
+         {
+             incomeButton.image.color = new Color32(0xFF, 0xFF, 0xFF, 0xFF);
+         }
+
+
+
+         if (gameData.coin <  gameData.timePreis[gameData.t] && gameData.t<5 )
         {
-            timeButton.image.color= new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            timeButton.image.color= new Color32(0x5A, 0x5A, 0x5A, 0xFF);
         }
-         if (gameData.coin < gameData.incomePreis[gameData.h])
+         
+         else if(gameData.coin >=  gameData.timePreis[gameData.t] && gameData.t<5)
+         {
+             timeButton.image.color= new Color32(0xFF, 0xFF, 0xFF, 0xFF);
+         }
+         
+         if (gameData.coin < gameData.holePreis[gameData.h]&&gameData.h<5)
         {
-            holeButton.image.color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
+            holeButton.image.color = new Color32(0x5A, 0x5A, 0x5A, 0xFF);
         }
+        
+         else if(gameData.coin >= gameData.holePreis[gameData.h]&&gameData.h<5)
+         {
+             holeButton.image.color = new Color32(0xFF, 0xFF, 0xFF, 0xFF);
+
+         }
     }
     
    
