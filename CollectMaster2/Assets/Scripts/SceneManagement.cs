@@ -10,6 +10,7 @@ public class SceneManagement : MonoBehaviour
     private GameObject gameManagerObject;
     private GameManager2 gameManager2Script;
     private GameObject gameManager2Object;
+    public GameObject buttons;
     
     
     public GameData gameData;
@@ -42,8 +43,11 @@ public class SceneManagement : MonoBehaviour
                gameData.t = 0;
 
             }
-            
-            
+
+            if (gameData.scene > 0)
+            {
+               buttons.gameObject.SetActive(true);
+            }
             gameData.collectedObjects.Clear();
             
         }

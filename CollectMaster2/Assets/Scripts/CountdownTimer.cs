@@ -10,9 +10,6 @@ public class CountdownTimer : MonoBehaviour
     public TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI timeUpText;
     [SerializeField] private Image timeImage;
-    
-
-    private Animator timeImageAnimator;
     [SerializeField] private Animator timeUpAnim;
     //public int countdownDuration = 10; // Başlangıç süresi (saniye)
     private int currentTime;
@@ -22,6 +19,7 @@ public class CountdownTimer : MonoBehaviour
     private GameObject joyStick;
     [SerializeField] private PlayerController playerController;
     public static int time = 15;
+    [SerializeField] private Animator timeImageAnimator;
     
 
     private void Start()
@@ -31,7 +29,7 @@ public class CountdownTimer : MonoBehaviour
 
         countdownText.text = "00:" + gameData.timeDuration.ToString();
         UpdateUI();
-        timeImageAnimator = GameObject.Find("TimeImage").GetComponent<Animator>();
+       
         joyStick = GameObject.Find("JoystickCanvas");
         timeUpText.text = "Time Up!";
 
@@ -81,6 +79,7 @@ public class CountdownTimer : MonoBehaviour
 
 
     }
+    
 
     
 }

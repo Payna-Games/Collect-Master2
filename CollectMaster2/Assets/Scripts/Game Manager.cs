@@ -39,8 +39,10 @@ public class GameManager : MonoBehaviour
     private Color textColor;
     private int cameraButtonIndex;
     private bool tutorial;
+    
     [SerializeField] private FloatingJoystick floatingJoystick;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Canvas tutorialAnimCanvas;
+    [SerializeField] private GameObject timeImage;
     
 
 
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
         else
         {
             tutorial = false;
-            animator.gameObject.SetActive(false);
+            tutorialAnimCanvas.gameObject.SetActive(false);
         }
         cameraButtonIndex = 0;
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
@@ -130,26 +132,16 @@ public class GameManager : MonoBehaviour
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
         IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
         coinText.text = gameData.coin.ToString();
-        if(tutorial)
-        {
-            floatingJoystick.gameObject.SetActive(false);
-        }
+      
 
 
     }
 
     public void HoleSizeButton()
     {
-        if (tutorial)
-        {
-            
-           
-            tutorial = false;
-            animator.SetTrigger("slide");
-            floatingJoystick.gameObject.SetActive(true);
-        }
-        else if(!tutorial)
-        {
+        
+        
+        
             gameData.h++;
             cameraButtonIndex++;
             gameData.cameraIndex = cameraButtonIndex;
@@ -179,7 +171,7 @@ public class GameManager : MonoBehaviour
                 holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
                 holeSizeStop = true;
             } 
-        }
+    
                 
         
        
@@ -188,8 +180,7 @@ public class GameManager : MonoBehaviour
     }
     public void TimeButton()
     {
-        if (!tutorial)
-        {
+        
             gameData.t++;
         
             gameData.timeDuration += 5;
@@ -211,15 +202,15 @@ public class GameManager : MonoBehaviour
                 timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
             } 
-        }
+        
         
 
        
     }
     public void IncomeButton()
     {
-        if (!tutorial)
-        {
+        
+        
             gameData.i++;
             gameData.increaseCoin++;
             gameData.IncomeLevel++;
@@ -239,7 +230,7 @@ public class GameManager : MonoBehaviour
             }
 
 
-        }
+        
         
 
 
@@ -248,10 +239,11 @@ public class GameManager : MonoBehaviour
 
     public void ScreenButton()
     {
-        if (!tutorial && !countdownTimer.isCountingDown)
+        if (!countdownTimer.isCountingDown)
         {
             gameOver = false;
-            animator.gameObject.SetActive(false);
+            tutorialAnimCanvas.gameObject.SetActive(false);
+            timeImage.gameObject.SetActive(true);
             countdownTimer.isCountingDown = true;
             countdownTimer.StartCountdown();
             
