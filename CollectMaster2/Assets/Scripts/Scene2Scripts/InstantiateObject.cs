@@ -35,17 +35,17 @@ public class InstantiateObject : MonoBehaviour
                 
                 if (setActiveScript.randomCubePosition <= 30)
                 {
-                    Instantiate(GameAssets.i.effects[3], transform.position, quaternion.identity);
+                    Instantiate(GameAssets.i.effects[2], transform.position, quaternion.identity);
                     particleEffect.Play();
                 }
                 else if (31 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 63)
                 {
-                    Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
+                    Instantiate(GameAssets.i.effects[0], transform.position, quaternion.identity);
                     particleEffect.Play();
                 }
-                else
+                else if(64 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 86)
                 {
-                    Instantiate(GameAssets.i.effects[2], transform.position, quaternion.identity);
+                    Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
                     particleEffect.Play();
                 }
                 

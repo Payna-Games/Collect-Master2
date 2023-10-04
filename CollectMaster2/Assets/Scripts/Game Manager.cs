@@ -139,12 +139,17 @@ public class GameManager : MonoBehaviour
 
     public void HoleSizeButton()
     {
-        
-        
-        
+
+        if (gameData.coin >= gameData.holePreis[gameData.h])
+        {
+            gameData.coin -= gameData.holePreis[gameData.h];
+            coinText.text = gameData.coin.ToString();
+            
             gameData.h++;
             cameraButtonIndex++;
             gameData.cameraIndex = cameraButtonIndex;
+           
+           
             if (!holeSizeStop)
             {
                 hole.transform.localScale += holeSize.scaleStep * Vector3.one;
@@ -171,7 +176,10 @@ public class GameManager : MonoBehaviour
                 holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
                 holeSizeStop = true;
             } 
-    
+
+        }
+        
+            
                 
         
        
@@ -180,8 +188,12 @@ public class GameManager : MonoBehaviour
     }
     public void TimeButton()
     {
-        
+        if (gameData.coin >= gameData.timePreis[gameData.t])
+        {
+            gameData.coin -= gameData.timePreis[gameData.t];
+            coinText.text = gameData.coin.ToString();
             gameData.t++;
+           
         
             gameData.timeDuration += 5;
             CountdownTimer.time += 5;
@@ -202,6 +214,8 @@ public class GameManager : MonoBehaviour
                 timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
             } 
+        }
+            
         
         
 
@@ -209,8 +223,11 @@ public class GameManager : MonoBehaviour
     }
     public void IncomeButton()
     {
-        
-        
+        if (gameData.coin >= gameData.incomePreis[gameData.i])
+        {
+            gameData.coin -= gameData.incomePreis[gameData.i];
+            coinText.text = gameData.coin.ToString();
+           
             gameData.i++;
             gameData.increaseCoin++;
             gameData.IncomeLevel++;
@@ -229,6 +246,9 @@ public class GameManager : MonoBehaviour
 
             }
 
+        }
+        
+          
 
         
         
