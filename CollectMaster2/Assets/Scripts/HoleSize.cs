@@ -85,11 +85,16 @@ public class HoleSize : MonoBehaviour
                 if (currentSizeIndex <= 4)
                 {
                     currentSizeIndex++;
-                    Debug.Log( currentSizeIndex+1+".kamera");
+                    //Debug.Log( currentSizeIndex+1+".kamera");
                 }
                 hasIncreased = true;
                 //gameData.holeScale = transform.localScale;
                 
+            }
+
+            if (currentSizeIndex == 4)
+            {
+                gameManager.holeSizeStop = true;
             }
         }
         
