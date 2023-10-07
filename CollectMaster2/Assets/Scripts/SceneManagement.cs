@@ -125,7 +125,7 @@ public class SceneManagement : MonoBehaviour
 
 
 
-        gameData.coin = PlayerPrefs.GetInt("Coin", 0);
+        gameData.coin = PlayerPrefs.GetInt("Coin", 5000);
         gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
         gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
         gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);
