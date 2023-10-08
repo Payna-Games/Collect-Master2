@@ -79,25 +79,36 @@ public class SetActive : MonoBehaviour
       if (objectCount ==0)
       {
          otherScene = false;
-        
-         if (gameManager2.fillAmount < 1)
+         
+          if (0 <= gameManager2.fillAmount && gameManager2.fillAmount < 0.3f)
          {
             
-            StartCoroutine(NextSceneTimer());
+            StartCoroutine(NextSceneTimer("Try Again"));
          }
         
-         if (gameManager2.fillAmount == 1) 
+         else if (gameManager2.fillAmount == 1) 
          {
-            tryAgainText.text = "Well Done";
-            anim.Play("TimeUpAnimation");
+          
+            StartCoroutine(NextSceneTimer("Well Donee!! "));
+         }
+         else if (0.7f <= gameManager2.fillAmount && gameManager2.fillAmount <= 1)
+         {
+            
+            StartCoroutine(NextSceneTimer("Greatt!!"));
+         }
+         else if (0.3f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.7f)
+         {
+           
+            StartCoroutine(NextSceneTimer("Not Bad"));
          }
 
+          if (gameData.collectedObjects.Count == 0)
+          {
+             StartCoroutine(NextSceneTimer("Try Again"));
+          }
       }
 
-      if (gameData.collectedObjects.Count == 0)
-      {
-         StartCoroutine(NextSceneTimer());
-      }
+      
      
 
 
@@ -126,10 +137,10 @@ public class SetActive : MonoBehaviour
       }
    }
 
-   private IEnumerator NextSceneTimer()
+   private IEnumerator NextSceneTimer(string text)
    {
       yield return new WaitForSeconds(3); // İlk bekleme süresi
-      tryAgainText.text = "Try Again!";
+      tryAgainText.text = text;
       anim.Play("TimeUpAnimation");
      
       otherScene = true;

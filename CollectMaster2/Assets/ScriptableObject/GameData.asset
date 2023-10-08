@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 13
+  timeDuration: 25
   holeSize: 0
   income: 0
-  coin: 22
+  coin: 248
   collectedObjects: []
   incomePreis: f4010000e8030000d0070000d0070000
   holePreis: 32000000c80000002c0100005802000084030000b0040000
