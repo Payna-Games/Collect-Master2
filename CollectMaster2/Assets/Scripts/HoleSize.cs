@@ -19,7 +19,7 @@ public class HoleSize : MonoBehaviour
     public static Transform holeLocal;
     private CameraSwitcher cameraSwitcher;
     [SerializeField] private TextMeshProUGUI wowText;
-    [SerializeField] private GameObject buttons;
+    
 
 
     //circle fill değerleri
@@ -96,7 +96,7 @@ public class HoleSize : MonoBehaviour
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex <= 3 && !buttons.gameObject.activeSelf)
+                if (currentSizeIndex <= 3 && gameData.timeDuration >0 && gameData.timeDuration<15 )
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
