@@ -33,13 +33,14 @@ public class HoleSize : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
      private PlayerController playerController;
-     string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH!" };
+     private int i;
+     private string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH!" };
     private void Start()
     {
         
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         playerController = GetComponent<PlayerController>();
-
+        i = 0;
     }
 
   
@@ -112,17 +113,19 @@ public class HoleSize : MonoBehaviour
 
     private IEnumerator MoveSpeedIncrease()
     {
-        for(int i = 0; i<4; i++ )
-        {
-            wowText.text = messages[i];
-            wowText.gameObject.SetActive(true);
-            
-        }
         
-        playerController._moveSpeed += 0.04f;
+
+        if (i<=3) 
+        
+        { wowText.gameObject.SetActive(true); 
+            wowText.text = messages[i].ToString(); 
+        }
+        playerController._moveSpeed += 0.01f;
         yield return new WaitForSeconds(3f);
         playerController._moveSpeed = 0.028f;
         wowText.gameObject.SetActive(false);
+        i++;
+
 
 
     }
