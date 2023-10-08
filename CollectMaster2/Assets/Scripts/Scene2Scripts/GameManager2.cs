@@ -32,7 +32,7 @@ public class GameManager2 : MonoBehaviour
    
    void UpdateFillAmount()
    {
-       fillAmount = Mathf.Lerp(fillImage.fillAmount, (float)setActive.collectedObjectCount /136f, Time.deltaTime * imageFillSpeed);
+       fillAmount = Mathf.Lerp(fillImage.fillAmount, (float)setActive.collectedObjectCount /134f, Time.deltaTime * imageFillSpeed);
        fillImage.fillAmount = fillAmount;
        percent.text = (fillAmount*100).ToString("F0") + "%";
    }

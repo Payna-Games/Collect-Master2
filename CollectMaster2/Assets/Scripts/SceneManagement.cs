@@ -36,8 +36,8 @@ public class SceneManagement : MonoBehaviour
             if (gameData.scene == 0)
             {
                 LoadGameData();
-                CountdownTimer.time = 25;
-                gameData.timeDuration = 25;
+                CountdownTimer.time = 15;
+                gameData.timeDuration = 15;
                 gameData.i = 0;
                 gameData.h = 0;
                 gameData.t = 0;
@@ -125,7 +125,7 @@ public class SceneManagement : MonoBehaviour
 
 
 
-        gameData.coin = PlayerPrefs.GetInt("Coin", 5000);
+        gameData.coin = PlayerPrefs.GetInt("Coin", 0);
         gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
         gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
         gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);

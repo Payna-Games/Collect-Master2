@@ -8,7 +8,7 @@ using Unity.Mathematics;
 public class InstantiateObject : MonoBehaviour
 {
     private Transform targetPosition;
-    private float duration = 0.75f;
+    private float duration = 0.50f;
     public AnimationCurve[] curve;
 
     private SetActive setActiveScript;
@@ -36,16 +36,19 @@ public class InstantiateObject : MonoBehaviour
                 if (setActiveScript.randomCubePosition <= 42)//white
                 {
                     Instantiate(GameAssets.i.effects[2], transform.position, quaternion.identity);
+                    
                     particleEffect.Play();
                 }
                 else if (43 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 84)//blue
                 {
                     Instantiate(GameAssets.i.effects[0], transform.position, quaternion.identity);
+                   
                     particleEffect.Play();
                 }
                 else if(85 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 121)//red
                 {
                     Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
+                    
                     particleEffect.Play();
                 }
                 

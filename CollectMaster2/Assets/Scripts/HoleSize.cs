@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class HoleSize : MonoBehaviour
@@ -18,8 +19,9 @@ public class HoleSize : MonoBehaviour
     public static Transform holeLocal;
     private CameraSwitcher cameraSwitcher;
     [SerializeField] private TextMeshProUGUI wowText;
-    
-    
+    [SerializeField] private GameObject buttons;
+
+
     //circle fill değerleri
     private float scaleValue;
     private float scaleValue2;
@@ -34,7 +36,7 @@ public class HoleSize : MonoBehaviour
     [SerializeField] private GameManager gameManager;
      private PlayerController playerController;
      private int i;
-     private string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH!" };
+     private string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH FASTERR!" };
     private void Start()
     {
         
@@ -94,7 +96,7 @@ public class HoleSize : MonoBehaviour
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex <= 3  )
+                if (currentSizeIndex <= 3 && !buttons.gameObject.activeSelf)
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
@@ -131,9 +133,9 @@ public class HoleSize : MonoBehaviour
         {
             wowText.gameObject.SetActive(true); 
             wowText.text = messages[i].ToString(); 
-            playerController._moveSpeed += 0.01f;
+            playerController._moveSpeed = 0.027f;
             yield return new WaitForSeconds(5f);
-            playerController._moveSpeed = 0.028f;
+            playerController._moveSpeed = 0.029f;
         }
 
         wowText.gameObject.SetActive(false);

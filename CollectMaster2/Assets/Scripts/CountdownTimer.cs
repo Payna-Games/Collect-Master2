@@ -62,7 +62,7 @@ public class CountdownTimer : MonoBehaviour
             if (gameData.timeDuration == 0)
             {
                 timeImageAnimator.enabled = false;
-                timeUpAnim.Play("TimeUpAnimation");
+                timeUpAnim.Play("Scene1TimeUpAnim");
                 joyStick.gameObject.SetActive(false);
                 playerController._moveSpeed = 0f;
             }

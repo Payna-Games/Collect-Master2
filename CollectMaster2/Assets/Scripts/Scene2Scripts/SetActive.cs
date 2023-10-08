@@ -93,6 +93,11 @@ public class SetActive : MonoBehaviour
          }
 
       }
+
+      if (gameData.collectedObjects.Count == 0)
+      {
+         StartCoroutine(NextSceneTimer());
+      }
      
 
 

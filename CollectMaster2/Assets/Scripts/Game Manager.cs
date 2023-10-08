@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     
 
     [SerializeField] Button incomeButton;
-    [SerializeField] private Button holeButton;
+    public Button holeButton;
     [SerializeField] private Button timeButton;
      private SceneManagement sceneManagement; 
     public  bool holeSizeStop = false;
