@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 using UnityEngine.UI;
 
 public class HoleSize : MonoBehaviour
@@ -16,6 +17,7 @@ public class HoleSize : MonoBehaviour
     public int currentSizeIndex = 0;
     public static Transform holeLocal;
     private CameraSwitcher cameraSwitcher;
+    [SerializeField] private TextMeshProUGUI wowText;
     
     
     //circle fill değerleri
@@ -30,11 +32,14 @@ public class HoleSize : MonoBehaviour
     private bool hasIncreased = false;
 
     [SerializeField] private GameManager gameManager;
+     private PlayerController playerController;
+     string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH!" };
     private void Start()
     {
         
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
-       
+        playerController = GetComponent<PlayerController>();
+
     }
 
   
@@ -85,11 +90,12 @@ public class HoleSize : MonoBehaviour
                 if (currentSizeIndex <= 4)
                 {
                     currentSizeIndex++;
-                    //Debug.Log( currentSizeIndex+1+".kamera");
+                    
                 }
                 hasIncreased = true;
-                //gameData.holeScale = transform.localScale;
-                
+                StartCoroutine(MoveSpeedIncrease());
+
+
             }
 
             if (currentSizeIndex == 4)
@@ -102,5 +108,22 @@ public class HoleSize : MonoBehaviour
           
 
        
+    }
+
+    private IEnumerator MoveSpeedIncrease()
+    {
+        for(int i = 0; i<4; i++ )
+        {
+            wowText.text = messages[i];
+            wowText.gameObject.SetActive(true);
+            
+        }
+        
+        playerController._moveSpeed += 0.04f;
+        yield return new WaitForSeconds(3f);
+        playerController._moveSpeed = 0.028f;
+        wowText.gameObject.SetActive(false);
+
+
     }
 }

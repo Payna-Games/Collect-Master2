@@ -37,14 +37,14 @@ public class GameManager : MonoBehaviour
      private SceneManagement sceneManagement; 
     public  bool holeSizeStop = false;
     private Color textColor;
-    
-    private bool tutorial;
-    
+
+
     [SerializeField] private FloatingJoystick floatingJoystick;
-    [SerializeField] private Canvas tutorialAnimCanvas;
     [SerializeField] private GameObject timeImage;
     
-    
+    [SerializeField] private Canvas tutorialAnimCanvas;
+    [SerializeField] private TextMeshProUGUI collectAll;
+    private bool tutorial;
 
 
 
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         else
         {
             tutorial = false;
-            tutorialAnimCanvas.gameObject.SetActive(false);
+            collectAll.gameObject.SetActive(false);
         }
         
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
@@ -258,6 +258,7 @@ public class GameManager : MonoBehaviour
         if (!countdownTimer.isCountingDown)
         {
             gameOver = false;
+            tutorialAnimCanvas.gameObject.SetActive(false);
             tutorialAnimCanvas.gameObject.SetActive(false);
             timeImage.gameObject.SetActive(true);
             countdownTimer.isCountingDown = true;

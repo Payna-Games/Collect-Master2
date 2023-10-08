@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 0.02
-  jumpDuration: 0.02
+  jumpDuration: 0.01
