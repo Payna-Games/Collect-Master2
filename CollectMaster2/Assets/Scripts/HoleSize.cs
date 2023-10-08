@@ -85,24 +85,28 @@ public class HoleSize : MonoBehaviour
 
 
             }
-            if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
-            {
-           
-                if (currentSizeIndex <= 4)
-                {
-                    currentSizeIndex++;
-                    
-                }
-                hasIncreased = true;
-                StartCoroutine(MoveSpeedIncrease());
-
-
-            }
-
-            if (currentSizeIndex == 4)
+            
+            if (currentSizeIndex == 5)
             {
                 gameManager.holeSizeStop = true;
             }
+            
+            if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
+            {
+           
+                if (currentSizeIndex <= 3  )
+                {
+                    currentSizeIndex++;
+                    StartCoroutine(MoveSpeedIncrease());
+                    
+                }
+                hasIncreased = true;
+               
+
+
+            }
+
+            
         }
         
         
@@ -115,14 +119,23 @@ public class HoleSize : MonoBehaviour
     {
         
 
-        if (i<=3) 
+        if (i<=2) 
         
-        { wowText.gameObject.SetActive(true); 
+        { 
+            wowText.gameObject.SetActive(true); 
             wowText.text = messages[i].ToString(); 
+            yield return new WaitForSeconds(3f);
         }
-        playerController._moveSpeed += 0.01f;
-        yield return new WaitForSeconds(3f);
-        playerController._moveSpeed = 0.028f;
+
+        if (i == 3)
+        {
+            wowText.gameObject.SetActive(true); 
+            wowText.text = messages[i].ToString(); 
+            playerController._moveSpeed += 0.01f;
+            yield return new WaitForSeconds(5f);
+            playerController._moveSpeed = 0.028f;
+        }
+
         wowText.gameObject.SetActive(false);
         i++;
 

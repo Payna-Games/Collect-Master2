@@ -30,20 +30,20 @@ public class InstantiateObject : MonoBehaviour
 
                 
                 
-                SetActiveField(targetPosition.position, 0.2f);
+                SetActiveField(targetPosition.position, 0.1f);
                 Destroy(gameObject);
                 
-                if (setActiveScript.randomCubePosition <= 30)
+                if (setActiveScript.randomCubePosition <= 42)//white
                 {
                     Instantiate(GameAssets.i.effects[2], transform.position, quaternion.identity);
                     particleEffect.Play();
                 }
-                else if (31 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 63)
+                else if (43 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 84)//blue
                 {
                     Instantiate(GameAssets.i.effects[0], transform.position, quaternion.identity);
                     particleEffect.Play();
                 }
-                else if(64 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 86)
+                else if(85 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 121)//red
                 {
                     Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
                     particleEffect.Play();

@@ -81,11 +81,11 @@ public class GameManager : MonoBehaviour
             incomeButton.interactable = false;
             incomeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
         }
-        if (gameData.h <5)
+        if (gameData.h <6)
         {
             holeCoinText.text = gameData.holePreis[gameData.h].ToString();
         }
-        else if (gameData.h >= 5)
+        else if (gameData.h >= 6)
         {
             holeCoinText.text= "Max";
             holeCoinText.alpha= 0.7f;
@@ -114,8 +114,7 @@ public class GameManager : MonoBehaviour
 
         holeSize.currentSizeIndex = gameData.currentSizeIndex;
         cameraSwitcher.SwitchCamera(gameData.currentSizeIndex);
-        Debug.Log("hole leveli = "+gameData.currentSizeIndex);
-        Debug.Log( holeSize.currentSizeIndex+1 +".kamera");
+      
 
     }
 
@@ -156,7 +155,7 @@ public class GameManager : MonoBehaviour
                 hole.transform.localScale = holeSize.targetSize[gameData.currentSizeIndex];
                 gameData.holeSizeLevel++;
                 holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
-                cameraSwitcher.SwitchCamera( gameData.currentSizeIndex+1);
+                cameraSwitcher.SwitchCamera( gameData.currentSizeIndex);
 
             
             }

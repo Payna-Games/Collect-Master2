@@ -18,7 +18,7 @@ public class CountdownTimer : MonoBehaviour
     public bool isCountingDown;
     private GameObject joyStick;
     [SerializeField] private PlayerController playerController;
-    public static int time = 15;
+    public static int time;
     [SerializeField] private Animator timeImageAnimator;
     
 
