@@ -17,7 +17,7 @@ MonoBehaviour:
     showProgressBar: 1
     generationType: 1
     voxelSizeType: 0
-    subdivisionLevel: 40
+    subdivisionLevel: 20
     absoluteVoxelSize: 10000
     precision: 3
     uvConversion: 1
