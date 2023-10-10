@@ -29,20 +29,20 @@ public class SceneManagement : MonoBehaviour
 
 
 
-        if (currentSceneIndex == 1)
-        {
+        //if (currentSceneIndex == 1)
+        //{
 
 
-            if (gameData.scene == 0)
-            {
+           // if (gameData.scene == 0)
+           // {
                 LoadGameData();
-                CountdownTimer.time = 15;
-                gameData.timeDuration = 15;
+                CountdownTimer.time = 60;
+                gameData.timeDuration = 60;
                 gameData.i = 0;
                 gameData.h = 0;
                 gameData.t = 0;
 
-            }
+           // }
 
             if (gameData.scene > 0)
             {
@@ -51,7 +51,7 @@ public class SceneManagement : MonoBehaviour
 
             gameData.collectedObjects.Clear();
 
-        }
+       // }
 
         GameObject saveTransformHole = GameObject.Find("GAMEPLAY/HoleParent");
        
