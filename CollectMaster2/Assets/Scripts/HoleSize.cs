@@ -96,7 +96,7 @@ public class HoleSize : MonoBehaviour
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex <= 3 && gameData.timeDuration >0 && gameData.timeDuration<15 )
+                if (currentSizeIndex <= 3 && CountdownTimer.timerStart == true )
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());

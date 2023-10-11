@@ -20,7 +20,7 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     public static int time;
     [SerializeField] private Animator timeImageAnimator;
-    
+    public  static bool timerStart;
 
     private void Start()
     {
@@ -42,7 +42,8 @@ public class CountdownTimer : MonoBehaviour
     }
     public void StartCountdown()
     {
-        InvokeRepeating("UpdateCountdown", 1.0f, 1.0f); 
+        InvokeRepeating("UpdateCountdown", 1.0f, 1.0f);
+        timerStart = true;
     }
 
     private void UpdateCountdown()
@@ -65,6 +66,7 @@ public class CountdownTimer : MonoBehaviour
                 timeUpAnim.Play("Scene1TimeUpAnim");
                 joyStick.gameObject.SetActive(false);
                 playerController._moveSpeed = 0f;
+                timerStart = false;
             }
         }
        

@@ -29,20 +29,20 @@ public class SceneManagement : MonoBehaviour
 
 
 
-        //if (currentSceneIndex == 1)
-        //{
+        if (currentSceneIndex == 1)
+        {
 
 
-           // if (gameData.scene == 0)
-           // {
+           if (gameData.scene == 0)
+            {
                 LoadGameData();
-                CountdownTimer.time = 60;
-                gameData.timeDuration = 60;
+                CountdownTimer.time = 15;
+                gameData.timeDuration = 15;
                 gameData.i = 0;
                 gameData.h = 0;
                 gameData.t = 0;
 
-           // }
+            }
 
             if (gameData.scene > 0)
             {
@@ -51,7 +51,7 @@ public class SceneManagement : MonoBehaviour
 
             gameData.collectedObjects.Clear();
 
-       // }
+        }
 
         GameObject saveTransformHole = GameObject.Find("GAMEPLAY/HoleParent");
        
@@ -125,12 +125,12 @@ public class SceneManagement : MonoBehaviour
 
 
 
-        gameData.coin = PlayerPrefs.GetInt("Coin", 50000);
+        gameData.coin = PlayerPrefs.GetInt("Coin", 0);
         gameData.holeSizeLevel = PlayerPrefs.GetInt("HoleSizeLevel", 0);
         gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
         gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);
         gameData.increaseCoin = PlayerPrefs.GetInt("IncreaseCoin", 0);
-        gameData.timeDuration = PlayerPrefs.GetInt("timeDuration", 500);
+       // gameData.timeDuration = PlayerPrefs.GetInt("timeDuration", 0);
         gameData.h = PlayerPrefs.GetInt("h", 0);
         gameData.t = PlayerPrefs.GetInt("t", 0);
         gameData.t = PlayerPrefs.GetInt("i", 0);
