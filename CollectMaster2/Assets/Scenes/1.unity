@@ -9407,7 +9407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880181908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11281,7 +11281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159478642}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12461,7 +12461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278939811}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19855,7 +19855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942282752}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23246,7 +23246,7 @@ PrefabInstance:
     - target: {fileID: 3877989267425170096, guid: 66498c4828b809246be3cee901685e94,
         type: 3}
       propertyPath: objCountLimit
-      value: 136
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 6086567087856206855, guid: 66498c4828b809246be3cee901685e94,
         type: 3}

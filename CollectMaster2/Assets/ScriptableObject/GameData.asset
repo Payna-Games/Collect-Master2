@@ -13,75 +13,12 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 0
+  timeDuration: 13
+  timeSave: 15
   holeSize: 0
   income: 0
-  coin: 65
-  collectedObjects:
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
+  coin: 0
+  collectedObjects: []
   incomePreis: f4010000e8030000d0070000d0070000
   holePreis: 32000000c80000002c0100005802000084030000b0040000
   timePreis: 1900000064000000c8000000f40100005802000084030000b0040000

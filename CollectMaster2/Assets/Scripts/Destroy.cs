@@ -14,7 +14,7 @@ public class DestroyTrigger : MonoBehaviour
     [SerializeField] public int objCountLimit;
 
     
-    //[SerializeField] private Animator coinCollectAnimator;
+    
     public GameData gameData;
 
 
@@ -24,7 +24,7 @@ public class DestroyTrigger : MonoBehaviour
     {
         if (other.TryGetComponent(out Collectible collectible))
         {
-            //Vibrator.Vibrate(50);
+            Vibrator.Vibrate(50);
             holeSize.CollectibleCollected(collectible.GetSize());
             gameData.coin += collectible.GetCoin();
             gameManager.Coin();

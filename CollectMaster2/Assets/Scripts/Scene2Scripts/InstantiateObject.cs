@@ -30,7 +30,7 @@ public class InstantiateObject : MonoBehaviour
 
                 
                 
-                SetActiveField(targetPosition.position, 0.1f);
+                SetActiveField(targetPosition.position, 0.15f);
                 Destroy(gameObject);
                 
                 if (setActiveScript.randomCubePosition <= 42)//white
@@ -45,7 +45,7 @@ public class InstantiateObject : MonoBehaviour
                    
                     particleEffect.Play();
                 }
-                else if(85 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 121)//red
+                else if(85 <= setActiveScript.randomCubePosition && setActiveScript.randomCubePosition <= 122)//red
                 {
                     Instantiate(GameAssets.i.effects[1], transform.position, quaternion.identity);
                     

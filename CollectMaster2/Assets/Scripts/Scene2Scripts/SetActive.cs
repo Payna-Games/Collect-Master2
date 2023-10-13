@@ -48,7 +48,7 @@ public class SetActive : MonoBehaviour
    {
       randomIndex = GetUniqueRandomIndex(0, gameData.collectedObjects.Count, usedIndicesGameObject);
       string randomObject = gameData.collectedObjects[randomIndex];
-      randomCubePosition = GetUniqueRandomIndex(0, 87, usedIndicesCube);
+      randomCubePosition = GetUniqueRandomIndex(0, 121, usedIndicesCube);
 
 
 
@@ -86,21 +86,25 @@ public class SetActive : MonoBehaviour
             StartCoroutine(NextSceneTimer("Try Again"));
          }
         
-         else if (gameManager2.fillAmount == 1) 
+         else if (gameManager2.fillAmount >=0.99f) 
          {
           
             StartCoroutine(NextSceneTimer("Well Donee!! "));
          }
-         else if (0.7f <= gameManager2.fillAmount && gameManager2.fillAmount <= 1)
+         else if (0.5f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.8f)
          {
             
             StartCoroutine(NextSceneTimer("Greatt!!"));
          }
-         else if (0.3f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.7f)
+         else if (0.3f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.5f)
          {
            
             StartCoroutine(NextSceneTimer("Not Bad"));
          }
+          else if (0.8f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.90f)
+          {
+             StartCoroutine(NextSceneTimer("So Close!!"));
+          }
 
           if (gameData.collectedObjects.Count == 0)
           {

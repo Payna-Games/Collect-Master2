@@ -18,13 +18,13 @@ public class CountdownTimer : MonoBehaviour
     public bool isCountingDown;
     private GameObject joyStick;
     [SerializeField] private PlayerController playerController;
-    public static int time;
+    
     [SerializeField] private Animator timeImageAnimator;
     public  static bool timerStart;
 
     private void Start()
     {
-        gameData.timeDuration = time;
+       
         gameManager = GetComponent<GameManager>();
 
         countdownText.text = "00:" + gameData.timeDuration.ToString();

@@ -15,6 +15,7 @@ public class SceneManagement : MonoBehaviour
 
     public GameData gameData;
     private int currentSceneIndex;
+    private bool firstTimeStart;
 
     
 
@@ -26,34 +27,46 @@ public class SceneManagement : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
+        gameData.timeDuration = gameData.timeSave;
+        
 
-
-
-        if (currentSceneIndex == 1)
+        if (PlayerPrefs.GetInt("firstTimeStart", 1) == 1)
         {
+            firstTimeStart = true;
+                      
+            PlayerPrefs.SetInt("firstTimeStart", 0);             
+                         
+        }
+        else
+        {
+            firstTimeStart = false;
+            
 
-
-           if (gameData.scene == 0)
-            {
-                LoadGameData();
-                CountdownTimer.time = 15;
-                gameData.timeDuration = 15;
+        }
+           if (firstTimeStart)
+           {
+               LoadGameData();
+                
                 gameData.i = 0;
                 gameData.h = 0;
                 gameData.t = 0;
+                
 
-            }
 
-            if (gameData.scene > 0)
-            {
-                buttons.gameObject.SetActive(true);
-            }
 
-            gameData.collectedObjects.Clear();
-
-        }
+           }
 
         GameObject saveTransformHole = GameObject.Find("GAMEPLAY/HoleParent");
+        if (gameData.scene > 0)
+        {
+            buttons.gameObject.SetActive(true);
+        }
+
+        if (currentSceneIndex == 1)
+        {
+            gameData.collectedObjects.Clear();
+        }
+       
        
 
     }
@@ -101,7 +114,7 @@ public class SceneManagement : MonoBehaviour
 
     void Update()
     {
-        if (gameData.timeDuration == 0 || destroyTrigger.objCount == destroyTrigger.objCountLimit)
+        if (gameData.timeDuration == 0 || gameData.collectedObjects.Count == destroyTrigger.objCountLimit)
         {
             StartCoroutine(WaitForSeconds());
         }
@@ -130,7 +143,7 @@ public class SceneManagement : MonoBehaviour
         gameData.timeLevel = PlayerPrefs.GetInt("TimeLevel", 0);
         gameData.IncomeLevel = PlayerPrefs.GetInt("IncomeLevel", 0);
         gameData.increaseCoin = PlayerPrefs.GetInt("IncreaseCoin", 0);
-       // gameData.timeDuration = PlayerPrefs.GetInt("timeDuration", 0);
+      
         gameData.h = PlayerPrefs.GetInt("h", 0);
         gameData.t = PlayerPrefs.GetInt("t", 0);
         gameData.t = PlayerPrefs.GetInt("i", 0);
