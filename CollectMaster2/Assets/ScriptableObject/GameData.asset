@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 0
+  timeDuration: 15
   timeSave: 15
   holeSize: 0
   income: 0

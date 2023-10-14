@@ -20,14 +20,14 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
     public TextMeshProUGUI coinText;
     
-    [SerializeField] private TextMeshProUGUI timeLevelText;
-    [SerializeField] private TextMeshProUGUI timeCoinText;
+    public TextMeshProUGUI timeLevelText;
+    public TextMeshProUGUI timeCoinText;
     
-    [SerializeField] private TextMeshProUGUI holeLevelText;
-    [SerializeField] private TextMeshProUGUI holeCoinText;
+    public TextMeshProUGUI holeLevelText;
+    public TextMeshProUGUI holeCoinText;
    
-    [SerializeField] private TextMeshProUGUI IncomeLevelText;
-    [SerializeField] private TextMeshProUGUI incomeCoinText;
+    public TextMeshProUGUI IncomeLevelText;
+    public TextMeshProUGUI incomeCoinText;
 
     
 
@@ -176,14 +176,10 @@ public class GameManager : MonoBehaviour
                 holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
                 holeSizeStop = true;
             } 
-          sceneManagement.SaveData();
+          
         }
-        
-            
-                
-        
-       
-       
+        sceneManagement.SaveData();
+
 
     }
     public void TimeButton()
@@ -214,9 +210,9 @@ public class GameManager : MonoBehaviour
                 timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
             } 
-            sceneManagement.SaveData();
+            
         }
-       
+        sceneManagement.SaveData();
         
         
 

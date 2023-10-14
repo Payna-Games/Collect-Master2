@@ -101,7 +101,7 @@ public class SetActive : MonoBehaviour
            
             StartCoroutine(NextSceneTimer("Not Bad"));
          }
-          else if (0.8f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.90f)
+          else if (0.8f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.99f)
           {
              StartCoroutine(NextSceneTimer("So Close!!"));
           }

@@ -219,6 +219,7 @@ public class SceneManagement : MonoBehaviour
         
         UnityEngine.PlayerPrefs.SetInt(saveKey+"currentSizeIndex", gameData.currentSizeIndex);
         UnityEngine.PlayerPrefs.SetInt(saveKey+"scene", gameData.scene);
+        
         //UnityEngine.PlayerPrefs.SetInt(saveKey, gameData.collectedObjects);
         
         
