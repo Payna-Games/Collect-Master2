@@ -19,6 +19,7 @@ public class HoleSize : MonoBehaviour
     public static Transform holeLocal;
     private CameraSwitcher cameraSwitcher;
     [SerializeField] private TextMeshProUGUI wowText;
+    [SerializeField] private SceneManagement sceneManagement;
     
 
 
@@ -100,7 +101,7 @@ public class HoleSize : MonoBehaviour
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
-                    
+                    sceneManagement.SaveData();
                 }
                 hasIncreased = true;
                

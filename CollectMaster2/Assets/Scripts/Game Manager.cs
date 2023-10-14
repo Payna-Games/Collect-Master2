@@ -51,12 +51,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.GetInt("tutorial", 1) == 1)
+        if (UnityEngine.PlayerPrefs.GetInt("tutorial", 1) == 1)
         {
             
             tutorial = true;
-
-            PlayerPrefs.SetInt("tutorial", 0);
+        
+            UnityEngine.PlayerPrefs.SetInt("tutorial", 0);
         }
         else
         {
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour
                 holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
                 holeSizeStop = true;
             } 
-
+          sceneManagement.SaveData();
         }
         
             
@@ -214,6 +214,7 @@ public class GameManager : MonoBehaviour
                 timeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
 
             } 
+            sceneManagement.SaveData();
         }
        
         
@@ -248,7 +249,7 @@ public class GameManager : MonoBehaviour
 
         }
        
-
+        sceneManagement.SaveData();
 
     }
 
@@ -265,12 +266,14 @@ public class GameManager : MonoBehaviour
             
           
         }
+        sceneManagement.SaveData();
     }
 
     public void Coin()
     {
         gameData.coin += gameData.increaseCoin;
         coinText.text = gameData.coin.ToString();
+        sceneManagement.SaveData();
     }
 
     private void Update()

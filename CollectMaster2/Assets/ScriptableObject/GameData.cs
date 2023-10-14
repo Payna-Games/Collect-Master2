@@ -13,9 +13,7 @@ public class GameData :  ScriptableObject
      public int income;
      public int coin;
      public List<string> collectedObjects = new List<string>();
-     public List<int> incomePreis;
-     public List<int> holePreis;
-     public List<int> timePreis;
+     
      public int holeSizeLevel;
      public int timeLevel;
      public int IncomeLevel;
@@ -27,6 +25,9 @@ public class GameData :  ScriptableObject
      public Vector3 holeScale;
      public int currentSizeIndex;
      
+     public List<int> incomePreis;
+     public List<int> holePreis;
+     public List<int> timePreis;
 
      public int i;
      public int h;
