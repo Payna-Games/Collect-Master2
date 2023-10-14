@@ -28,8 +28,8 @@ public class SceneManagement : MonoBehaviour
     private void Awake()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-       
+        gameManagerScript.holeSizeStop = false;
+        gameManagerScript.holeSizeStopSave = 0;
         
 
          if ( UnityEngine.PlayerPrefs.GetInt("firstTimeStart", 1) == 1)
@@ -219,6 +219,7 @@ public class SceneManagement : MonoBehaviour
         
         UnityEngine.PlayerPrefs.SetInt(saveKey+"currentSizeIndex", gameData.currentSizeIndex);
         UnityEngine.PlayerPrefs.SetInt(saveKey+"scene", gameData.scene);
+        UnityEngine.PlayerPrefs.SetInt(saveKey+"holeSizeStop",gameManagerScript.holeSizeStopSave);
         
         //UnityEngine.PlayerPrefs.SetInt(saveKey, gameData.collectedObjects);
         

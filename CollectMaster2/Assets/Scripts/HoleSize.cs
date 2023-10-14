@@ -21,6 +21,7 @@ public class HoleSize : MonoBehaviour
     [SerializeField] private TextMeshProUGUI wowText;
     [SerializeField] private SceneManagement sceneManagement;
     
+    
 
 
     //circle fill değerleri
@@ -44,6 +45,7 @@ public class HoleSize : MonoBehaviour
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         playerController = GetComponent<PlayerController>();
         i = 0;
+        
     }
 
   
@@ -73,6 +75,18 @@ public class HoleSize : MonoBehaviour
 
     private void Update()
     {
+        if (UnityEngine.PlayerPrefs.GetInt("holeSizeStop", 1) == 1)
+        {
+            gameManager.holeSizeStop = true;
+            
+        
+            
+        }
+        else
+        {
+            gameManager.holeSizeStop = false;
+            
+        }
         if (!gameManager.holeSizeStop)
         {
             circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
@@ -92,6 +106,8 @@ public class HoleSize : MonoBehaviour
             if (currentSizeIndex == 5)
             {
                 gameManager.holeSizeStop = true;
+                gameManager.holeSizeStopSave = 1;
+
             }
             
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
@@ -101,11 +117,11 @@ public class HoleSize : MonoBehaviour
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
-                    sceneManagement.SaveData();
+                    
                 }
                 hasIncreased = true;
                
-
+                sceneManagement.SaveData();
 
             }
 

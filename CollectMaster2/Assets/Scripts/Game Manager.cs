@@ -46,11 +46,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI collectAll;
     private bool tutorial;
 
-
+    public int holeSizeStopSave;
 
 
     private void Awake()
     {
+        
         if (UnityEngine.PlayerPrefs.GetInt("tutorial", 1) == 1)
         {
             
