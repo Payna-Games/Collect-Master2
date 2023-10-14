@@ -155,6 +155,7 @@ public class SetActive : MonoBehaviour
       {
          sceneManagement.TryAgainScene();
          gameData.scene++;
+         sceneManagement.SaveData();
          holeToFill.SetActive((false));
       }
 
