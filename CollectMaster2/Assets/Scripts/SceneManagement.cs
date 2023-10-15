@@ -65,7 +65,7 @@ public class SceneManagement : MonoBehaviour
 
            if (!firstTimeStart)
            {
-               Debug.Log("kaydetmesi lazım");
+               
                gameData.coin = UnityEngine.PlayerPrefs.GetInt(saveKey+"coin", gameData.coin);
                gameData.increaseCoin= UnityEngine.PlayerPrefs.GetInt(saveKey+"increaseCoin", gameData.increaseCoin);
         
@@ -147,7 +147,7 @@ public class SceneManagement : MonoBehaviour
 
     public void TryAgainScene()
     {
-        SaveData();
+        
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         
         SceneManager.LoadScene(currentSceneIndex - 1);

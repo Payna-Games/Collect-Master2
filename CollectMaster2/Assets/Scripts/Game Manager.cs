@@ -164,11 +164,11 @@ public class GameManager : MonoBehaviour
         
         
         
-            if (gameData.h<5)
+            if (gameData.h<6)
             {
                 holeCoinText.text = gameData.holePreis[gameData.h].ToString();
             }
-            else if (gameData.h >= 5)
+            else if (gameData.h >= 6)
             {
                 holeCoinText.text = "Max";
                 holeCoinText.alpha= 0.7f;
@@ -187,19 +187,38 @@ public class GameManager : MonoBehaviour
     {
         if (gameData.coin >= gameData.timePreis[gameData.t])
         {
-            gameData.coin -= gameData.timePreis[gameData.t];
-            coinText.text = gameData.coin.ToString();
-            gameData.t++;
-            sceneManagement.SaveData();
-        
-            gameData.timeDuration += 5;
-            gameData.timeSave += 5;
-            gameData.timeLevel++;
-            timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
-       
+            
 
-            if (gameData.t<5)
+            if (gameData.t<=3)
             {
+                
+                gameData.coin -= gameData.timePreis[gameData.t];
+                coinText.text = gameData.coin.ToString();
+                gameData.t++;
+            
+        
+                gameData.timeDuration += 5;
+                gameData.timeSave += 5;
+                gameData.timeLevel++;
+                timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
+           
+                sceneManagement.SaveData();
+                timeCoinText.text = gameData.timePreis[gameData.t].ToString();
+                
+            }
+            else if (gameData.t == 4)
+            {
+                gameData.coin -= gameData.timePreis[gameData.t];
+                coinText.text = gameData.coin.ToString();
+                gameData.t++;
+            
+        
+                gameData.timeDuration += 10;
+                gameData.timeSave += 10;
+                gameData.timeLevel++;
+                timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
+           
+                sceneManagement.SaveData();
                 timeCoinText.text = gameData.timePreis[gameData.t].ToString();
             }
             else if (gameData.t >= 5)
@@ -289,22 +308,22 @@ public class GameManager : MonoBehaviour
 
 
 
-         if (gameData.coin <  gameData.timePreis[gameData.t] && gameData.t<5 )
+         if (gameData.coin <  gameData.timePreis[gameData.t] && gameData.t<6 )
         {
             timeButton.image.color= new Color32(0x5A, 0x5A, 0x5A, 0xFF);
         }
          
-         else if(gameData.coin >=  gameData.timePreis[gameData.t] && gameData.t<5)
+         else if(gameData.coin >=  gameData.timePreis[gameData.t] && gameData.t<6)
          {
              timeButton.image.color= new Color32(0xFF, 0xFF, 0xFF, 0xFF);
          }
          
-         if (gameData.coin < gameData.holePreis[gameData.h]&&gameData.h<5)
+         if (gameData.coin < gameData.holePreis[gameData.h]&&gameData.h<6)
         {
             holeButton.image.color = new Color32(0x5A, 0x5A, 0x5A, 0xFF);
         }
         
-         else if(gameData.coin >= gameData.holePreis[gameData.h]&&gameData.h<5)
+         else if(gameData.coin >= gameData.holePreis[gameData.h]&&gameData.h<6)
          {
              holeButton.image.color = new Color32(0xFF, 0xFF, 0xFF, 0xFF);
 

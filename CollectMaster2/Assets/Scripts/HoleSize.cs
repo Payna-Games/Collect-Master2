@@ -37,7 +37,7 @@ public class HoleSize : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
      private PlayerController playerController;
-     private int i;
+    [SerializeField] private int i;
      private string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH FASTERR!" };
     private void Start()
     {
@@ -103,9 +103,9 @@ public class HoleSize : MonoBehaviour
 
             }
             
-            if (currentSizeIndex == 5)
+            if (currentSizeIndex == 7)
             {
-                sceneManagement.holeSizeStop = true;
+                
                sceneManagement.holeSizeStopSave = 1;
                sceneManagement.HoleStopSave();
 
@@ -114,12 +114,21 @@ public class HoleSize : MonoBehaviour
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex <= 3 && CountdownTimer.timerStart == true )
+                if (currentSizeIndex <=5 && CountdownTimer.timerStart == true )
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
                     
                 }
+                else if (currentSizeIndex >5 && CountdownTimer.timerStart == true && i <=3)
+                {
+                    StartCoroutine(MoveSpeedIncrease());
+                }
+                
+                // else if (currentSizeIndex > 3 && CountdownTimer.timerStart == true)
+                // {
+                //     sceneManagement.holeSizeStop = true;
+                // }
                 hasIncreased = true;
                
                 sceneManagement.SaveData();
@@ -151,9 +160,10 @@ public class HoleSize : MonoBehaviour
         {
             wowText.gameObject.SetActive(true); 
             wowText.text = messages[i].ToString(); 
-            playerController._moveSpeed = 0.027f;
+            playerController._moveSpeed = 0.031f;
             yield return new WaitForSeconds(5f);
-            playerController._moveSpeed = 0.029f;
+            playerController._moveSpeed = 0.027f;
+            i = -1;
         }
 
         wowText.gameObject.SetActive(false);

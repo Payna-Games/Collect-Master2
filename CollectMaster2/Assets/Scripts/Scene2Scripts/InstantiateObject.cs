@@ -30,7 +30,7 @@ public class InstantiateObject : MonoBehaviour
 
                 
                 
-                SetActiveField(targetPosition.position, 0.125f);
+                SetActiveField(targetPosition.position, 0.128f);
                 Destroy(gameObject);
                 
                 if (setActiveScript.randomCubePosition <= 42)//white
