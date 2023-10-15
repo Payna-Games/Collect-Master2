@@ -20,8 +20,8 @@ public class HoleSize : MonoBehaviour
     private CameraSwitcher cameraSwitcher;
     [SerializeField] private TextMeshProUGUI wowText;
     [SerializeField] private SceneManagement sceneManagement;
-    
-    
+    private bool wowTextWait;
+    private bool moveSpeedIncrease;
 
 
     //circle fill değerleri
@@ -37,15 +37,16 @@ public class HoleSize : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
      private PlayerController playerController;
-    [SerializeField] private int i;
+    [SerializeField] private int m;
      private string[] messages = { "GREAT!", "SUPER!", "INCREDIBLE!", "WOAAAH FASTERR!" };
     private void Start()
     {
         
         cameraSwitcher = GameObject.Find("Cameras").GetComponent<CameraSwitcher>();
         playerController = GetComponent<PlayerController>();
-        i = 0;
-        
+        m = 0;
+        wowTextWait = false;
+        moveSpeedIncrease = true;
     }
 
   
@@ -62,6 +63,7 @@ public class HoleSize : MonoBehaviour
             increase = true;
             hasIncreased = false;
             cameraSwitcher.SwitchCamera(currentSizeIndex+1);
+            moveSpeedIncrease = false;
             
             scaleValue2 = scaleValue2 % scaleIncraseThreshold;
             circle.fillAmount = 0;
@@ -87,7 +89,7 @@ public class HoleSize : MonoBehaviour
             sceneManagement.holeSizeStop = false;
             
         }
-        if (!sceneManagement.holeSizeStop)
+        if (!sceneManagement.holeSizeStop && !wowTextWait)
         {
             circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
        
@@ -103,38 +105,45 @@ public class HoleSize : MonoBehaviour
 
             }
             
-            if (currentSizeIndex == 7)
+            if (currentSizeIndex == 6)
             {
                 
                sceneManagement.holeSizeStopSave = 1;
                sceneManagement.HoleStopSave();
+                hasIncreased = true;
 
             }
             
             if (transform.localScale.x >= targetSize[ currentSizeIndex+1].x && transform.localScale.y >= targetSize[ currentSizeIndex+1].y && transform.localScale.z >= targetSize[ currentSizeIndex+1].z)
             {
            
-                if (currentSizeIndex <=5 && CountdownTimer.timerStart == true )
+                if (currentSizeIndex <=5 && CountdownTimer.timerStart == true && m <=3 && !wowTextWait && !moveSpeedIncrease)
                 {
                     currentSizeIndex++;
                     StartCoroutine(MoveSpeedIncrease());
-                    
+                    moveSpeedIncrease = true;
+
                 }
-                else if (currentSizeIndex >5 && CountdownTimer.timerStart == true && i <=3)
+                if (currentSizeIndex >5 && CountdownTimer.timerStart == true && m <=3 && !wowTextWait && !moveSpeedIncrease)
                 {
                     StartCoroutine(MoveSpeedIncrease());
+                    moveSpeedIncrease = true;
                 }
                 
-                // else if (currentSizeIndex > 3 && CountdownTimer.timerStart == true)
-                // {
-                //     sceneManagement.holeSizeStop = true;
-                // }
-                hasIncreased = true;
+                
+                
                
                 sceneManagement.SaveData();
 
             }
 
+            if (hasIncreased && CountdownTimer.timerStart == true && m <= 3 && !wowTextWait && !moveSpeedIncrease)
+            {
+                StartCoroutine(MoveSpeedIncrease());
+                moveSpeedIncrease = true;
+            }
+            
+          
             
         }
         
@@ -146,28 +155,38 @@ public class HoleSize : MonoBehaviour
 
     private IEnumerator MoveSpeedIncrease()
     {
-        
 
-        if (i<=2) 
-        
-        { 
-            wowText.gameObject.SetActive(true); 
-            wowText.text = messages[i].ToString(); 
-            yield return new WaitForSeconds(3f);
-        }
-
-        if (i == 3)
+        if (!wowTextWait)
         {
-            wowText.gameObject.SetActive(true); 
-            wowText.text = messages[i].ToString(); 
-            playerController._moveSpeed = 0.031f;
-            yield return new WaitForSeconds(5f);
-            playerController._moveSpeed = 0.027f;
-            i = -1;
-        }
+            if (m<=2) 
+        
+            { 
+                wowText.gameObject.SetActive(true); 
+                wowText.text = messages[m].ToString(); 
+                yield return new WaitForSeconds(3f);
+            }
 
-        wowText.gameObject.SetActive(false);
-        i++;
+            if (m == 3)
+            {
+                wowTextWait = true;
+                
+               wowText.gameObject.SetActive(true); 
+                wowText.text = messages[m].ToString(); 
+                playerController._moveSpeed = 0.036f;
+                yield return new WaitForSeconds(5f);
+                playerController._moveSpeed = 0.028f;
+                m = -1;
+                wowTextWait = false;
+                
+
+            }
+
+            wowText.gameObject.SetActive(false);
+            m++;
+            Debug.Log("m"+m);
+            
+        }
+       
 
 
 

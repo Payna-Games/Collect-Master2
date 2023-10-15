@@ -24,13 +24,14 @@ public class DestroyTrigger : MonoBehaviour
     {
         if (other.TryGetComponent(out Collectible collectible))
         {
+            objCount++;
             //Vibrator.Vibrate(50);
             holeSize.CollectibleCollected(collectible.GetSize());
             gameData.coin += collectible.GetCoin();
             gameManager.Coin();
                 Destroy(other.gameObject);
                 CoinCollect.Create(holeTransform.position, collectible.GetCoin()+gameData.increaseCoin);
-                objCount++;
+                
 
                 if (objCount<=objCountLimit)
                 {
