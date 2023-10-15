@@ -25,7 +25,7 @@ public class DestroyTrigger : MonoBehaviour
         if (other.TryGetComponent(out Collectible collectible))
         {
             objCount++;
-            //Vibrator.Vibrate(50);
+            Vibrator.Vibrate(50);
             holeSize.CollectibleCollected(collectible.GetSize());
             gameData.coin += collectible.GetCoin();
             gameManager.Coin();
@@ -42,4 +42,5 @@ public class DestroyTrigger : MonoBehaviour
 
         }
     }
+    
 }

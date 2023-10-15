@@ -90,6 +90,7 @@ public class SetActive : MonoBehaviour
          {
           
             StartCoroutine(NextSceneTimer("Well Donee!! "));
+            sceneManagement.OnGameFinished(true);
          }
          else if (0.5f <= gameManager2.fillAmount && gameManager2.fillAmount < 0.8f)
          {

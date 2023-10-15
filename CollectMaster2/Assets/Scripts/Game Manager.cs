@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
         
             hole.transform.localScale = holeSize.targetSize[gameData.currentSizeIndex];
         
-
+        sceneManagement.OnGameStarted(1);
         
 
     }
