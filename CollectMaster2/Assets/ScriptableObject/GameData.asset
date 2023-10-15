@@ -13,12 +13,29 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 15
+  timeDuration: 11
   timeSave: 15
   holeSize: 0
   income: 0
   coin: 0
-  collectedObjects: []
+  collectedObjects:
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
+  - Whistle
   holeSizeLevel: 0
   timeLevel: 0
   IncomeLevel: 0

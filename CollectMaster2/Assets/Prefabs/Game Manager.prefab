@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5174079712478442687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6243713827844366791}
+  - component: {fileID: 7247130760166923238}
+  - component: {fileID: 8055498663953277181}
+  - component: {fileID: 1344382811876040147}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6243713827844366791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174079712478442687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7247130760166923238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174079712478442687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5f0337766aac240b59e42a75861442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
+  holeSize: {fileID: 0}
+  destroyTrigger: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
+  coinText: {fileID: 0}
+  timeLevelText: {fileID: 0}
+  timeCoinText: {fileID: 0}
+  holeLevelText: {fileID: 0}
+  holeCoinText: {fileID: 0}
+  IncomeLevelText: {fileID: 0}
+  incomeCoinText: {fileID: 0}
+  incomeButton: {fileID: 0}
+  holeButton: {fileID: 0}
+  timeButton: {fileID: 0}
+  holeSizeStop: 0
+  floatingJoystick: {fileID: 0}
+  timeImage: {fileID: 0}
+  tutorialAnimCanvas: {fileID: 0}
+  collectAll: {fileID: 0}
+  holeSizeStopSave: 0
+--- !u!114 &8055498663953277181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174079712478442687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10cd986362cfe4b44b084415480b2109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownText: {fileID: 0}
+  timeUpText: {fileID: 0}
+  timeImage: {fileID: 0}
+  timeUpAnim: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
+  isCountingDown: 0
+  playerController: {fileID: 0}
+  timeImageAnimator: {fileID: 0}
+--- !u!114 &1344382811876040147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174079712478442687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e855a7e3e1a6b04db6a7d3f9190f924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManagerScript: {fileID: 7247130760166923238}
+  buttons: {fileID: 0}
+  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
+  destroyTrigger: {fileID: 0}

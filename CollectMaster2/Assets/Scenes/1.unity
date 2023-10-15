@@ -3911,7 +3911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389798781}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6173,106 +6173,42 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1522526603}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &605951601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 605951603}
-  - component: {fileID: 605951602}
-  - component: {fileID: 605951604}
-  - component: {fileID: 605951605}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &605951602
+--- !u!114 &605951602 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2523718714514656213}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605951601}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e5f0337766aac240b59e42a75861442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
-  holeSize: {fileID: 802233979}
-  destroyTrigger: {fileID: 1229649603}
-  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
-  coinText: {fileID: 4871666076556255504}
-  timeLevelText: {fileID: 1730212256}
-  timeCoinText: {fileID: 2089816069}
-  holeLevelText: {fileID: 1951906877}
-  holeCoinText: {fileID: 248151646}
-  IncomeLevelText: {fileID: 1676155135}
-  incomeCoinText: {fileID: 803649216}
-  incomeButton: {fileID: 940731361}
-  holeButton: {fileID: 632135883}
-  timeButton: {fileID: 1330021101}
-  holeSizeStop: 0
-  floatingJoystick: {fileID: 515472759}
-  timeImage: {fileID: 1036754940}
-  tutorialAnimCanvas: {fileID: 1025172354}
-  collectAll: {fileID: 1768408833}
---- !u!4 &605951603
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605951601}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &605951604
+--- !u!114 &605951604 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2523718714514656213}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605951601}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10cd986362cfe4b44b084415480b2109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownText: {fileID: 475915747}
-  timeUpText: {fileID: 4728363527590341798}
-  timeImage: {fileID: 1949927275}
-  timeUpAnim: {fileID: 334744571}
-  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
-  isCountingDown: 0
-  playerController: {fileID: 802233980}
-  timeImageAnimator: {fileID: 1949927276}
---- !u!114 &605951605
+--- !u!114 &605951605 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1344382811876040147, guid: 851fc88d4cc3ec1488388708a02127e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2523718714514656213}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605951601}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e855a7e3e1a6b04db6a7d3f9190f924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: {fileID: 740171042}
-  gameData: {fileID: 11400000, guid: 0997b8ed36b67fe4599fc230e5fc3281, type: 2}
-  destroyTrigger: {fileID: 1229649603}
 --- !u!1001 &623764848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9407,7 +9343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880181908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12461,7 +12397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278939811}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4403895, y: -0.000000015448006, z: 0.0000000075775075, w: 0.8978068}
+  m_LocalRotation: {x: 0.4403895, y: 0.000000015448006, z: -0.0000000075775075, w: 0.8978068}
   m_LocalPosition: {x: -11.87, y: 4.14, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22550,6 +22486,194 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &2523718714514656213
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1344382811876040147, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: buttons
+      value: 
+      objectReference: {fileID: 740171042}
+    - target: {fileID: 1344382811876040147, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: destroyTrigger
+      value: 
+      objectReference: {fileID: 1229649603}
+    - target: {fileID: 5174079712478442687, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243713827844366791, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 4871666076556255504}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: holeSize
+      value: 
+      objectReference: {fileID: 802233979}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeImage
+      value: 
+      objectReference: {fileID: 1036754940}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: collectAll
+      value: 
+      objectReference: {fileID: 1768408833}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: holeButton
+      value: 
+      objectReference: {fileID: 632135883}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeButton
+      value: 
+      objectReference: {fileID: 1330021101}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: holeCoinText
+      value: 
+      objectReference: {fileID: 248151646}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: incomeButton
+      value: 
+      objectReference: {fileID: 940731361}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeCoinText
+      value: 
+      objectReference: {fileID: 2089816069}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: holeLevelText
+      value: 
+      objectReference: {fileID: 1951906877}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeLevelText
+      value: 
+      objectReference: {fileID: 1730212256}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: destroyTrigger
+      value: 
+      objectReference: {fileID: 1229649603}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: incomeCoinText
+      value: 
+      objectReference: {fileID: 803649216}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: IncomeLevelText
+      value: 
+      objectReference: {fileID: 1676155135}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: floatingJoystick
+      value: 
+      objectReference: {fileID: 515472759}
+    - target: {fileID: 7247130760166923238, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: tutorialAnimCanvas
+      value: 
+      objectReference: {fileID: 1025172354}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeImage
+      value: 
+      objectReference: {fileID: 1949927275}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeUpAnim
+      value: 
+      objectReference: {fileID: 334744571}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeUpText
+      value: 
+      objectReference: {fileID: 4728363527590341798}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: countdownText
+      value: 
+      objectReference: {fileID: 475915747}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 802233980}
+    - target: {fileID: 8055498663953277181, guid: 851fc88d4cc3ec1488388708a02127e0,
+        type: 3}
+      propertyPath: timeImageAnimator
+      value: 
+      objectReference: {fileID: 1949927276}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 851fc88d4cc3ec1488388708a02127e0, type: 3}
 --- !u!1 &3859289441182494014
 GameObject:
   m_ObjectHideFlags: 0
@@ -23348,6 +23472,6 @@ SceneRoots:
   - {fileID: 986103989}
   - {fileID: 20941343}
   - {fileID: 886548399}
-  - {fileID: 605951603}
+  - {fileID: 2523718714514656213}
   - {fileID: 461013688}
   - {fileID: 1025172355}

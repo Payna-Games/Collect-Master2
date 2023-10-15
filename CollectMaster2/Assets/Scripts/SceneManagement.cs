@@ -19,6 +19,9 @@ public class SceneManagement : MonoBehaviour
     private bool firstTimeStart;
     private string saveKey = "gameData";
     
+    public int holeSizeStopSave;
+    public  bool holeSizeStop = false;
+    
     
 
 
@@ -27,12 +30,14 @@ public class SceneManagement : MonoBehaviour
 
     private void Awake()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        gameManagerScript.holeSizeStop = false;
-        gameManagerScript.holeSizeStopSave = 0;
         
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        holeSizeStop = false;
+        holeSizeStopSave = 0;
+        HoleStopSave();
 
-         if ( UnityEngine.PlayerPrefs.GetInt("firstTimeStart", 1) == 1)
+
+        if ( UnityEngine.PlayerPrefs.GetInt("firstTimeStart", 1) == 1)
          {
              firstTimeStart = true;
                        
@@ -65,7 +70,7 @@ public class SceneManagement : MonoBehaviour
                gameData.increaseCoin= UnityEngine.PlayerPrefs.GetInt(saveKey+"increaseCoin", gameData.increaseCoin);
         
                gameData.h=UnityEngine.PlayerPrefs.GetInt(saveKey+"h", gameData.h);
-               gameData.h = UnityEngine.PlayerPrefs.GetInt(saveKey+"i", gameData.i);
+               gameData.i = UnityEngine.PlayerPrefs.GetInt(saveKey+"i", gameData.i);
                gameData.t =UnityEngine.PlayerPrefs.GetInt(saveKey+"t", gameData.t);
                //income
                gameData.income = UnityEngine.PlayerPrefs.GetInt(saveKey+"income", gameData.income);
@@ -219,7 +224,7 @@ public class SceneManagement : MonoBehaviour
         
         UnityEngine.PlayerPrefs.SetInt(saveKey+"currentSizeIndex", gameData.currentSizeIndex);
         UnityEngine.PlayerPrefs.SetInt(saveKey+"scene", gameData.scene);
-        UnityEngine.PlayerPrefs.SetInt(saveKey+"holeSizeStop",gameManagerScript.holeSizeStopSave);
+        
         
         //UnityEngine.PlayerPrefs.SetInt(saveKey, gameData.collectedObjects);
         
@@ -227,6 +232,11 @@ public class SceneManagement : MonoBehaviour
         
         
     }
+
+     public void HoleStopSave()
+     {
+         UnityEngine.PlayerPrefs.SetInt(saveKey+"holeSizeStop",holeSizeStopSave);
+     }
 
     
 }

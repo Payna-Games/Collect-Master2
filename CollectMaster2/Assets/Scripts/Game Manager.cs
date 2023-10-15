@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public Button holeButton;
     [SerializeField] private Button timeButton;
      private SceneManagement sceneManagement; 
-    public  bool holeSizeStop = false;
+    
     private Color textColor;
 
 
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI collectAll;
     private bool tutorial;
 
-    public int holeSizeStopSave;
+    
 
 
     private void Awake()
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
             holeCoinText.color = new Color(0, 0, 0, 0.7f);
             holeButton.interactable = false;
             holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
-            holeSizeStop = true;
+            sceneManagement.holeSizeStop = true;
         }
         
         if (gameData.t <5)
@@ -149,9 +149,9 @@ public class GameManager : MonoBehaviour
             gameData.h++;
             gameData.currentSizeIndex++;
             
-            
+            sceneManagement.SaveData();
            
-            if (!holeSizeStop)
+            if (!sceneManagement.holeSizeStop)
             {
                 hole.transform.localScale = holeSize.targetSize[gameData.currentSizeIndex];
                 gameData.holeSizeLevel++;
@@ -175,11 +175,11 @@ public class GameManager : MonoBehaviour
                 holeLevelText.alpha = 0.7f;
                 holeButton.interactable = false;
                 holeButton.GetComponent<Image>().color = new Color32(0xAA, 0xAA, 0xAA, 0xAA);
-                holeSizeStop = true;
+                sceneManagement.holeSizeStop = true;
             } 
           
         }
-        sceneManagement.SaveData();
+        
 
 
     }
@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
             gameData.coin -= gameData.timePreis[gameData.t];
             coinText.text = gameData.coin.ToString();
             gameData.t++;
-           
+            sceneManagement.SaveData();
         
             gameData.timeDuration += 5;
             gameData.timeSave += 5;
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
             } 
             
         }
-        sceneManagement.SaveData();
+       
         
         
 
@@ -230,6 +230,7 @@ public class GameManager : MonoBehaviour
             gameData.increaseCoin++;
             gameData.IncomeLevel++;
             IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
+            sceneManagement.SaveData();
             if (gameData.i<3)
             {
                 incomeCoinText.text = gameData.incomePreis[gameData.i].ToString();
@@ -246,7 +247,7 @@ public class GameManager : MonoBehaviour
 
         }
        
-        sceneManagement.SaveData();
+       
 
     }
 

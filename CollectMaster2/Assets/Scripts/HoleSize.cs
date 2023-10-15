@@ -57,7 +57,7 @@ public class HoleSize : MonoBehaviour
         circleRatio += scaleValue / scaleIncraseThreshold;
         
         
-        if (scaleValue2 >= scaleIncraseThreshold && !gameManager.holeSizeStop)
+        if (scaleValue2 >= scaleIncraseThreshold && !sceneManagement.holeSizeStop)
         {
             increase = true;
             hasIncreased = false;
@@ -75,19 +75,19 @@ public class HoleSize : MonoBehaviour
 
     private void Update()
     {
-        if (UnityEngine.PlayerPrefs.GetInt("holeSizeStop", 1) == 1)
+        if (UnityEngine.PlayerPrefs.GetInt("holeSizeStop") == 1)
         {
-            gameManager.holeSizeStop = true;
+            sceneManagement.holeSizeStop = true;
             
         
             
         }
         else
         {
-            gameManager.holeSizeStop = false;
+            sceneManagement.holeSizeStop = false;
             
         }
-        if (!gameManager.holeSizeStop)
+        if (!sceneManagement.holeSizeStop)
         {
             circle.fillAmount = Mathf.Lerp(circle.fillAmount, circleRatio, Time.deltaTime * fillSpeed);
        
@@ -105,8 +105,9 @@ public class HoleSize : MonoBehaviour
             
             if (currentSizeIndex == 5)
             {
-                gameManager.holeSizeStop = true;
-                gameManager.holeSizeStopSave = 1;
+                sceneManagement.holeSizeStop = true;
+               sceneManagement.holeSizeStopSave = 1;
+               sceneManagement.HoleStopSave();
 
             }
             
