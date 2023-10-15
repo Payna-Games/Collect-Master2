@@ -13,100 +13,79 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000}
-  timeDuration: 27
-  timeSave: 45
+  timeDuration: 20
+  timeSave: 20
   holeSize: 0
   income: 0
-  coin: 2519
+  coin: 97
   collectedObjects:
+  - deleted
+  - Whistle
+  - deleted
+  - Whistle
+  - Whistle
+  - deleted
+  - Whistle
+  - Whistle
+  - deleted
+  - deleted
+  - Whistle
+  - deleted
+  - Whistle
+  - Whistle
+  - deleted
+  - Whistle
+  - deleted
   - Whistle
   - Whistle
   - Whistle
+  - deleted
   - Whistle
+  - deleted
   - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - Whistle
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
+  - deleted
+  - deleted
+  - deleted
+  - deleted
   - ball
   - ball
   - ball
   - ball
   - ball
+  - deleted
+  - ball
+  - deleted
+  - deleted
+  - deleted
+  - deleted
   - ball
   - ball
+  - deleted
+  - deleted
+  - deleted
+  - deleted
   - ball
-  - helmet
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - ball
-  - helmet
-  - ball
-  - ball
+  - deleted
   - helmet
   - helmet
   - helmet
-  holeSizeLevel: 6
-  timeLevel: 5
-  IncomeLevel: 3
-  scene: 14
+  - helmet
+  - deleted
+  - deleted
+  - deleted
+  holeSizeLevel: 1
+  timeLevel: 1
+  IncomeLevel: 0
+  scene: 0
   holeSizeCoin: 0
   timeCoin: 0
   incomeCoin: 0
-  increaseCoin: 3
+  increaseCoin: 0
   holeScale: {x: 0, y: 0, z: 0}
-  currentSizeIndex: 6
+  currentSizeIndex: 0
   incomePreis: 6400000096000000c8000000fa000000
   holePreis: 32000000c80000002c0100005802000084030000b0040000dc050000
   timePreis: 1900000064000000c8000000f40100005802000084030000b0040000
-  i: 3
-  h: 6
-  t: 5
+  i: 0
+  h: 1
+  t: 1

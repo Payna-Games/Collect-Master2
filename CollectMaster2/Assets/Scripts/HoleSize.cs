@@ -131,8 +131,8 @@ public class HoleSize : MonoBehaviour
                 }
                 
                 
-                
-               
+                 
+                hasIncreased = true;
                 sceneManagement.SaveData();
 
             }
@@ -143,7 +143,7 @@ public class HoleSize : MonoBehaviour
                 moveSpeedIncrease = true;
             }
             
-          
+         
             
         }
         
@@ -172,7 +172,7 @@ public class HoleSize : MonoBehaviour
                 
                wowText.gameObject.SetActive(true); 
                 wowText.text = messages[m].ToString(); 
-                playerController._moveSpeed = 0.036f;
+                playerController._moveSpeed = 0.040f;
                 yield return new WaitForSeconds(5f);
                 playerController._moveSpeed = 0.028f;
                 m = -1;
