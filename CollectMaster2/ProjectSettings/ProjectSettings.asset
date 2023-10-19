@@ -260,7 +260,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{dedicated}: user.keystore'
+  AndroidKeystoreName: C:/Users/enese/Desktop/holeChallenge/user.keystore
   AndroidKeyaliasName: user
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -817,6 +817,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
+    Server: 0
     Standalone: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
