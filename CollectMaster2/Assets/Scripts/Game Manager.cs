@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private CameraSwitcher cameraSwitcher;
     
     
-    private CountdownTimer countdownTimer;
+    [SerializeField] private CountdownTimer countdownTimer;
     public GameData gameData;
     public TextMeshProUGUI coinText;
     
@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         buttons = GameObject.Find("Buttons");
         hole = GameObject.Find("HoleParent");
-        countdownTimer = GetComponent<CountdownTimer>();
+        //countdownTimer = GetComponent<CountdownTimer>();
         holeLevelText.text = "Level: " + gameData.holeSizeLevel.ToString();
         timeLevelText.text ="Level: " + gameData.timeLevel.ToString();
         IncomeLevelText.text ="Level: " + gameData.IncomeLevel.ToString();
