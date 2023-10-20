@@ -810,10 +810,14 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   scriptingDefineSymbols:
     Android: YC_IOS14_SUPPORT;tenjin_applovin_enabled
     Standalone: YC_IOS14_SUPPORT
     iPhone: YC_IOS14_SUPPORT;tenjin_applovin_enabled
+=======
+  scriptingDefineSymbols: {}
+>>>>>>> parent of dc52807 (sdk eklendi)
 =======
   scriptingDefineSymbols: {}
 >>>>>>> parent of dc52807 (sdk eklendi)
