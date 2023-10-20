@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dfdcafa768cab5468baf9bc7589acf9, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000}
+  timeDuration: 15
+  timeSave: 0
+  holeSize: 0
+  income: 0
+  coin: 0
+  collectedObjects: []
+  holeSizeLevel: 0
+  timeLevel: 0
+  IncomeLevel: 0
+  scene: 0
+  holeSizeCoin: 0
+  timeCoin: 0
+  incomeCoin: 0
+  increaseCoin: 0
+  holeScale: {x: 0, y: 0, z: 0}
+  currentSizeIndex: 0
+  incomePreis: 
+  holePreis: 
+  timePreis: 
+  i: 0
+  h: 0
+  t: 0

@@ -173,6 +173,7 @@ public class SceneManagement : MonoBehaviour
 
 
         yield return new WaitForSeconds(2f);
+        OnGameStarted(2);
         NextScene();
 
 
@@ -238,5 +239,14 @@ public class SceneManagement : MonoBehaviour
          UnityEngine.PlayerPrefs.SetInt(saveKey+"holeSizeStop",holeSizeStopSave);
      }
 
+     public void OnGameStarted(int levelNumber)
+     {
+         YsoCorp.GameUtils.YCManager.instance.OnGameStarted(levelNumber);
+     }
+
+     public void OnGameFinished(bool hasWon)
+     {
+         YsoCorp.GameUtils.YCManager.instance.OnGameFinished(hasWon);
+     }
     
 }
