@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcf417bceeba474b8d12501c906cef3, type: 3}
   m_Name: YCConfigData
   m_EditorClassIdentifier: 
-  gameYcId: f1571b
+  gameYcId: 9b9011
   InAppRemoveAds: 
   InAppRemoveAdsCanRemoveInBanner: 1
   InappDebug: 1
@@ -25,10 +25,10 @@ MonoBehaviour:
   InterstitialInterval: 20
   rewardedResetDelay: 0
   activeLogs: 1
-  Name: Hole Challenge - Master
+  Name: Hole Challenge Master
   FbAppId: 770490468182068
   FbClientToken: aac3159dce52aef89dc0d19376f9e0c4
-  appleId: com.PaynaGames.HoleChallengeMaster
+  appleId: 
   MmpAdjust: 0
   MmpAdjustAppToken: 
   MmpTenjin: 1
